@@ -23,7 +23,7 @@ name = "Sapna"
 age = 22
 city = "Delhi"
 
-print("Name:", name)
+print(name)
 print("Age:", age)
 print("City:", city)
 
