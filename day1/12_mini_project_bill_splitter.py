@@ -14,8 +14,8 @@ print("     SMART RESTAURANT BILL & TIP SPLITTER (DAY 1)")
 print("=" * 55)
 
 # 1. Inputs (Sample values for automated execution, can also use input())
-total_bill = 2450.00       # Total bill amount in Rs
-people_count = 4           # Kitne log split kar rahe hain
+total_bill = 245.00       # Total bill amount in Rs
+people_count = 3         # Kitne log split kar rahe hain
 service_rating = "good"    # Service rating: excellent, good, average, poor
 
 # 2. Tip Percentage Calculation using if-elif-else
