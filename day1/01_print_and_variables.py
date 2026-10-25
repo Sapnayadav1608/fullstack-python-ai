@@ -38,7 +38,7 @@ user_age = 25
 print("User:", user_name, "| Age:", user_age)
 
 # =============================================================================
-# 5. Keywords & Identifiers (CampusX Concept)
+# 5. Keywords & Identifiers (Core Concept)
 # =============================================================================
 # Keywords: Python ke reserved words jinka pehle se fixed meaning hota hai.
 # Inhe hum variable name ke tor par use NAHI kar sakte.
