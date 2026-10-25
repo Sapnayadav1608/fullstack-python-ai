@@ -36,3 +36,27 @@ print("City:", city)
 user_name = "Rahul"
 user_age = 25
 print("User:", user_name, "| Age:", user_age)
+
+# =============================================================================
+# 5. Keywords & Identifiers (CampusX Concept)
+# =============================================================================
+# Keywords: Python ke reserved words jinka pehle se fixed meaning hota hai.
+# Inhe hum variable name ke tor par use NAHI kar sakte.
+
+import keyword
+
+print("\n--- Python Keywords ---")
+print("Total Keywords in Python:", len(keyword.kwlist))
+print("Keywords List:", keyword.kwlist)
+
+# Example:
+# if = 100        # ❌ SyntaxError (Kyunki 'if' ek keyword hai)
+# while = "loop"  # ❌ SyntaxError (Kyunki 'while' ek keyword hai)
+my_if = 100       # ✔️ Sahi hai
+
+# Identifiers kya hote hain?
+# Kisi bhi variable, function ya class ke NAAM ko 'Identifier' kehte hain.
+# Example: yahan 'score' ek identifier hai
+score = 95
+print("\nIdentifier example (score):", score)
+
