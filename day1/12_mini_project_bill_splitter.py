@@ -20,7 +20,7 @@ service_rating = input("Enter the service rating (excellent, good, average, poor
 
 # 2. Tip Percentage Calculation using if-elif-else
 if service_rating == "excellent":
-    tip_percent = 15  # 15% tip
+    tip_percent = 15  # 15% tip.
 elif service_rating == "good":
     tip_percent = 10  # 10% tip
 elif service_rating == "average":

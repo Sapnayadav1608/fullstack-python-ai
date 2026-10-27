@@ -33,6 +33,18 @@ This repository documents my daily code, structured notes, logic exercises, and 
 - **11:** `for` loops, `range()` function & string iteration
 - **12:** **Mini Project:** Smart Restaurant Bill & Tip Splitter 🧾
 
+### 📍 [Day 02: Python Strings in Depth](./day2)
+- **01:** String creation, raw strings `r""`, memory address & immutability proof
+- **02:** Indexing deep dive, negative index conversion formula, IndexError safety
+- **03:** Slicing mastery `[start:stop:step]`, step direction & reverse slicing `[::-1]`
+- **04:** Operations: Concatenation (`+`), repetition (`*`), membership & lexicographical comparison
+- **05:** Case conversions (`.title()`, `.swapcase()`) & strip cleaning methods (`.removeprefix()`, `.removesuffix()`)
+- **06:** Search & replace: `.find()` vs `.index()`, `.count()`, `.startswith()`, `.replace()`
+- **07:** Splitting, partitioning (`.partition()`) & joining lists into strings (`.join()`)
+- **08:** Validation methods (`.isalpha()`, `.isdigit()`, `.isalnum()`, `.isidentifier()`)
+- **09:** Modern f-strings: padding, alignment (`<`, `>`, `^`), decimal precision `:.2f`, thousands separator `:,`
+- **10:** **Practice Challenges:** Palindrome Checker, Email Masker, URL Slug Generator & Word Counter 🔤
+
 ---
 
 ## 🛠️ Tech Stack & Tools

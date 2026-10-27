@@ -1,7 +1,7 @@
 # =============================================================================
 # DAY 1 - TOPIC 01: Print Statement, Comments & Variables
 # =============================================================================
-# Python mein coding ki shuruat yahin se hoti hai!
+# Python mein coding ki shuruat yahin se hoti hai! 
 # =============================================================================
 
 # 1. Single-line comment (# se likhte hain, Python isse ignore karta hai)
@@ -23,7 +23,7 @@ name = "Sapna"
 age = 22
 city = "Delhi"
 
-print(name)
+print("Name:", name)
 print("Age:", age)
 print("City:", city)
 
