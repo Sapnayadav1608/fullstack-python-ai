@@ -28,9 +28,17 @@ print("=" * 60)
 # 3. Ek Windows path ko raw string r"" use karke print karein (jaise: C:\new_folder\test)
 
 print("\n--- [Task 1] String Creation ---")
-# TODO: Apna code yahan likhein:
-
-
+# TODO: 
+role='fullstack developer'
+goals="""
+-be a successful software engineer
+-master fullstack developer skills
+-learn and implement ai
+"""
+raw_string=r"D:\fullstack-python-ai"
+print("role:",role)
+print("goals:",goals)
+print("raw string:",raw_string)
 
 
 # -----------------------------------------------------------------------------
@@ -42,8 +50,11 @@ print("\n--- [Task 1] String Creation ---")
 
 print("\n--- [Task 2] Immutability & Memory Address ---")
 # TODO: Apna code yahan likhein:
-
-
+lang = "python"
+print("id of lang:",id(lang))
+new_lang=lang[0:2]+"Jython"
+print("new_lang:",new_lang)
+print(id(new_lang))   #id is different so strings are immutable 
 
 
 # -----------------------------------------------------------------------------
@@ -88,8 +99,6 @@ print("\n--- [Task 4] Slicing Tricks ---")
 
 print("\n--- [Task 5] Operations ---")
 # TODO: Apna code yahan likhein:
-
-
 
 
 # -----------------------------------------------------------------------------

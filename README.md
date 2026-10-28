@@ -45,6 +45,16 @@ This repository documents my daily code, structured notes, logic exercises, and 
 - **09:** Modern f-strings: padding, alignment (`<`, `>`, `^`), decimal precision `:.2f`, thousands separator `:,`
 - **10:** **Practice Challenges:** Palindrome Checker, Email Masker, URL Slug Generator & Word Counter 🔤
 
+### 📍 [Day 03: String Problems & Interview Questions](./day3)
+- **01:** Valid Palindrome (LeetCode #125) with Two-Pointer technique & Almost Palindrome (#680)
+- **02:** Valid Anagram (LeetCode #242) — Sorting vs Hash Map Frequency Counter $O(n)$
+- **03:** Reverse words in string (LeetCode #151) & clean Title Case without `.title()`
+- **04:** First unique character (LeetCode #387), most frequent char & deduplication
+- **05:** String compression / Run-length encoding (LeetCode #443) & decompression
+- **06:** Longest common prefix (LeetCode #14), sliding window substring count & Pangram check
+- **07:** Top 7 Tricky Interview Output Traps: Slicing boundaries, negative step, short-circuiting
+- **Workbook:** [`my_practice.py`](./day3/my_practice.py) — 7 Hands-on LeetCode style challenges for self-coding
+
 ---
 
 ## 🛠️ Tech Stack & Tools
