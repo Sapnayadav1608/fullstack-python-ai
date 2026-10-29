@@ -55,6 +55,16 @@ This repository documents my daily code, structured notes, logic exercises, and 
 - **07:** Top 7 Tricky Interview Output Traps: Slicing boundaries, negative step, short-circuiting
 - **Workbook:** [`my_practice.py`](./day3/my_practice.py) — 7 Hands-on LeetCode style challenges for self-coding
 
+### 📍 [Day 04: Time Complexity & Big O Fundamentals](./day4)
+- **01:** Why seconds/stopwatch measurement is flawed, operations count as function of $N$, Big O, Big $\Omega$, Big $\Theta$
+- **02:** The 6 Common Time Complexities: $O(1)$, $O(\log n)$, $O(n)$, $O(n \log n)$, $O(n^2)$, $O(2^n)$
+- **03:** The 4 Golden Rules: Drop constants ($O(2N) \rightarrow O(N)$), drop non-dominant terms, Add ($O(A+B)$) vs Multiply ($O(A \times B)$)
+- **04:** Space Complexity: Auxiliary Space vs Input Space, recursion call stack memory $O(N)$ vs iteration $O(1)$
+- **05:** Case Study: Two Sum Problem ($O(N^2)$ brute-force vs $O(N)$ Hash Map optimization with live speed comparison)
+- **06:** Live Benchmarking Tool: Visual ASCII performance table comparing $O(1)$, $O(\log N)$, $O(N)$, $O(N \log N)$, $O(N^2)$
+- **07:** Top Tricky Interview Questions: $i *= 2$ loops, triangle loops, string concatenation $+=$ trap, `in list` vs `in set`
+- **Workbook:** [`my_practice.py`](./day4/my_practice.py) — 5 Hands-on analysis and optimization tasks with TODO sections
+
 ---
 
 ## 🛠️ Tech Stack & Tools
