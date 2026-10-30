@@ -65,6 +65,15 @@ This repository documents my daily code, structured notes, logic exercises, and 
 - **07:** Top Tricky Interview Questions: $i *= 2$ loops, triangle loops, string concatenation $+=$ trap, `in list` vs `in set`
 - **Workbook:** [`my_practice.py`](./day4/my_practice.py) — 5 Hands-on analysis and optimization tasks with TODO sections
 
+### 📍 [Day 05: Python Lists — Operations, Methods & Memory Behaviour](./day5)
+- **01:** Memory Architecture: Referential arrays, pointers, in-place mutability, dynamic resizing bytes demo
+- **02:** Indexing, slicing, stepping, and in-place slice assignments (`scores[1:3] = [88, 99]`)
+- **03:** Adding & removing: `.append()` vs `.extend()` vs `.insert()` \| `.pop()` vs `.remove()` vs `del` vs `.clear()`
+- **04:** List operations: Concatenation (`+`), repetition (`*`), membership (`in`), `.sort()` in-place vs `sorted()` with custom key lambda
+- **05:** Shallow vs Deep Copy: The classic bug trap with nested lists and `copy.deepcopy()`
+- **06:** Time Complexity of Lists: Why `append()` is $O(1)$ and `insert(0)` is $O(N)$ with live speed comparison
+- **Workbook:** [`my_practice.py`](./day5/my_practice.py) — 7 Hands-on practice tasks with TODO sections
+
 ---
 
 ## 🛠️ Tech Stack & Tools
