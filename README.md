@@ -74,6 +74,13 @@ This repository documents my daily code, structured notes, logic exercises, and 
 - **06:** Time Complexity of Lists: Why `append()` is $O(1)$ and `insert(0)` is $O(N)$ with live speed comparison
 - **Workbook:** [`my_practice.py`](./day5/my_practice.py) — 7 Hands-on practice tasks with TODO sections
 
+### 📍 [Day 06: List Comprehensions, Nested Lists & Practical Problems](./day6)
+- **01:** List Comprehension Basics: `if` filtering, `if-else` ternary transformation, and CPython bytecode speed benchmark
+- **02:** Nested List Comprehensions: Double loops order rule, Cartesian products, matrix flattening & transposition
+- **03:** 2D Lists & The Multiplication Bug: `[[0]*3]*3` reference trap vs comprehension fix, diagonal traversals
+- **04:** Practical Data Problems: API input string cleaning, filtering dictionary database records, and matrix addition
+- **Workbook:** [`my_practice.py`](./day6/my_practice.py) — 6 Hands-on tasks with `# TODO` sections for self-coding
+
 ---
 
 ## 🛠️ Tech Stack & Tools

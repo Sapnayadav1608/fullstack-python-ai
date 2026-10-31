@@ -20,7 +20,6 @@ print("=" * 60)
 # Python Lists: "Referential Arrays" hoti hain.
 # Matlab List ke andar actual values (1, 2, "hello") store NAHI hoti,
 # balki unke MEMORY ADDRESSES (pointers) store hote hain!
-#
 # Yahi wajah hai ki Python list HETEROGENEOUS ho sakti hai (int, float, str mix):
 
 mixed_list = [100, "Python", 3.14, True]
