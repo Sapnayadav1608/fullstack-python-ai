@@ -81,6 +81,12 @@ This repository documents my daily code, structured notes, logic exercises, and 
 - **04:** Practical Data Problems: API input string cleaning, filtering dictionary database records, and matrix addition
 - **Workbook:** [`my_practice.py`](./day6/my_practice.py) — 6 Hands-on tasks with `# TODO` sections for self-coding
 
+### 📍 [Day 07: Week 01 Comprehensive Revision & List Interview Questions](./day7)
+- **01:** Week 1 Core Foundations: Memory model, object identity (`is` vs `==`), string slicing mechanics, Big O rules, referential arrays & deep copy
+- **02:** Top FAANG List Interview Problems: Two Sum (Hash Map $O(N)$), Move Zeroes (In-Place Two Pointers), Maximum Subarray (Kadane's Algorithm), Majority Element (Boyer-Moore Voting), Rotate Array (3-step reversal) & Merge Sorted Array
+- **03:** Top 7 Python List Gotchas & Interview Traps: Mutable default arguments (`def f(l=[])`), Modifying list during iteration bug, `[[0]*3]*3` reference trap, `+=` vs `+` aliasing, slice assignment `a[:]`, `.sort()` vs `sorted()`, and boolean identity in lists
+- **Workbook:** [`my_practice.py`](./day7/my_practice.py) — 7 Hands-on LeetCode & interview coding challenges with automated test suite for self-practice
+
 ---
 
 ## 🛠️ Tech Stack & Tools
