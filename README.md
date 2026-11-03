@@ -87,6 +87,13 @@ This repository documents my daily code, structured notes, logic exercises, and 
 - **03:** Top 7 Python List Gotchas & Interview Traps: Mutable default arguments (`def f(l=[])`), Modifying list during iteration bug, `[[0]*3]*3` reference trap, `+=` vs `+` aliasing, slice assignment `a[:]`, `.sort()` vs `sorted()`, and boolean identity in lists
 - **Workbook:** [`my_practice.py`](./day7/my_practice.py) — 7 Hands-on LeetCode & interview coding challenges with automated test suite for self-practice
 
+### 📍 [Day 08: Python Tuples — Immutability, Memory Architecture & Speed Benchmarks](./day8)
+- **01:** Tuple Fundamentals: Ordered immutable sequences, comma rule, the single-element comma trap `(42,)`, slicing & mutable object inside tuple trap
+- **02:** Tuples vs Lists: Memory overhead comparison (`sys.getsizeof()`), dynamic over-allocation vs fixed size, creation speed benchmark (1.8x+ faster), constant folding & hashability for dictionary keys
+- **03:** Operations & Unpacking: Why tuples have only 2 methods (`.count()`, `.index()`), variable swapping without temp variable, star `*` extended unpacking & `collections.namedtuple`
+- **04:** Top Tuple Interview Questions: The infamous `t[2] += [5]` trap (raises `TypeError` but still mutates!), multi-key lambda sorting, recursive deep flattening & graph weighted edges
+- **Workbook:** [`my_practice.py`](./day8/my_practice.py) — 6 Hands-on coding tasks with automated test suite for student self-practice
+
 ---
 
 ## 🛠️ Tech Stack & Tools
