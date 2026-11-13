@@ -94,6 +94,13 @@ This repository documents my daily code, structured notes, logic exercises, and 
 - **04:** Top Tuple Interview Questions: The infamous `t[2] += [5]` trap (raises `TypeError` but still mutates!), multi-key lambda sorting, recursive deep flattening & graph weighted edges
 - **Workbook:** [`my_practice.py`](./day8/my_practice.py) — 6 Hands-on coding tasks with automated test suite for student self-practice
 
+### 📍 [Day 09: Python Sets & Frozenset — Hashing Architecture, Set Theory & O(1) Lookups](./day9)
+- **01:** Set Fundamentals & Hashing: Unique collections, Hash Table backend, the empty set trap (`{}` vs `set()`), hashability rule, boolean collision trap (`1 == True`), and `.add()`, `.update()`, `.remove()` vs `.discard()`
+- **02:** Mathematical Set Operations: Union (`|`), Intersection (`&`), Difference (`-`), Symmetric Difference (`^`), Subsets, Supersets, Disjoint sets, and real-world RBAC permission validator
+- **03:** Set Performance & Frozenset: Live benchmark ($O(1)$ Hash lookup vs $O(N)$ linear scan — 4,000x+ faster), Set Comprehensions, and `frozenset` (immutable sets as dictionary keys) + NLP Tokenizer
+- **04:** Top FAANG Set Interview Problems: Order-preserving deduplication, Longest Consecutive Sequence (LeetCode #128 in $O(N)$ time), Missing numbers $[1, N]$, and K-way list intersection
+- **Workbook:** [`my_practice.py`](./day9/my_practice.py) — 6 Hands-on coding tasks with automated test suite for self-practice
+
 ---
 
 ## 🛠️ Tech Stack & Tools
