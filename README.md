@@ -101,6 +101,13 @@ This repository documents my daily code, structured notes, logic exercises, and 
 - **04:** Top FAANG Set Interview Problems: Order-preserving deduplication, Longest Consecutive Sequence (LeetCode #128 in $O(N)$ time), Missing numbers $[1, N]$, and K-way list intersection
 - **Workbook:** [`my_practice.py`](./day9/my_practice.py) — 6 Hands-on coding tasks with automated test suite for self-practice
 
+### 📍 [Day 10: Python Dictionaries — Hash Tables, Memory Architecture & O(1) Patterns](./day10)
+- **01:** Dictionary Fundamentals: Key-Value mappings, 5 creation patterns, the mutable default reference trap in `fromkeys()`, key hashability rule, CPython 3.6+ compact table (indices + entries) & dynamic resizing
+- **02:** Methods & CRUD: Safe access (`d.get()` vs `KeyError`), atomic `.setdefault()`, Python 3.9+ dictionary union (`|` and `|=`), deletion strategies (`.pop()`, `.popitem()`), and dynamic views with set operations
+- **03:** Internals & Benchmarks: Hash bucket bitwise math `hash(k) & mask`, open addressing with perturb probing, live 1,000,000 items benchmark (Dict $O(1)$ ~5,000x faster than lists), comprehensions & In-Memory TTL Cache
+- **04:** Top FAANG Hash Map Patterns: Two Sum (LeetCode #1 in $O(N)$), First Unique Character (LeetCode #387), Group Anagrams (LeetCode #49), and Subarray Sum Equals K (LeetCode #560)
+- **Workbook:** [`my_practice.py`](./day10/my_practice.py) — 6 Hands-on coding tasks with automated test suite for self-practice
+
 ---
 
 ## 🛠️ Tech Stack & Tools
