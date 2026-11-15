@@ -108,6 +108,13 @@ This repository documents my daily code, structured notes, logic exercises, and 
 - **04:** Top FAANG Hash Map Patterns: Two Sum (LeetCode #1 in $O(N)$), First Unique Character (LeetCode #387), Group Anagrams (LeetCode #49), and Subarray Sum Equals K (LeetCode #560)
 - **Workbook:** [`my_practice.py`](./day10/my_practice.py) — 6 Hands-on coding tasks with automated test suite for self-practice
 
+### 📍 [Day 11: Python Functions Mastery — Arguments, Scopes (LEGB), Closures & Lambdas](./day11)
+- **01:** Parameters & Signatures: Positional vs keyword arguments, the mutable default argument trap (`l=[]` vs `l=None`), `*args` tuple unpacking, `**kwargs` dict unpacking, Python 3.8+ positional-only (`/`) and keyword-only (`*`) markers
+- **02:** Scopes & LEGB Rule: Local $\rightarrow$ Enclosing $\rightarrow$ Global $\rightarrow$ Built-in hierarchy, variable shadowing, architectural dangers of `global`, `nonlocal` for nested scopes, and UnboundLocalError compiler trap
+- **03:** First-Class Functions & Closures: Functions as objects, dictionary dispatch routing table, custom Higher-Order Functions, lexical scope retention, `__closure__` cell introspection, function factories, and $O(1)$ memory moving average tracker
+- **04:** Lambdas & Recursion: Anonymous lambda expressions, multi-key tuple sorting (`key=lambda x: (-x['salary'], x['age'])`), `map()`, `filter()`, `functools.reduce()`, Call Stack frame dynamics, and Recursive Nested Dict Flattener
+- **Workbook:** [`my_practice.py`](./day11/my_practice.py) — 6 Hands-on coding tasks with automated test suite for self-practice
+
 ---
 
 ## 🛠️ Tech Stack & Tools
