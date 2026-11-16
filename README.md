@@ -115,6 +115,13 @@ This repository documents my daily code, structured notes, logic exercises, and 
 - **04:** Lambdas & Recursion: Anonymous lambda expressions, multi-key tuple sorting (`key=lambda x: (-x['salary'], x['age'])`), `map()`, `filter()`, `functools.reduce()`, Call Stack frame dynamics, and Recursive Nested Dict Flattener
 - **Workbook:** [`my_practice.py`](./day11/my_practice.py) — 6 Hands-on coding tasks with automated test suite for self-practice
 
+### 📍 [Day 12: Python Decorators Mastery — Wrappers, Chaining, Production Patterns & LRU Cache](./day12)
+- **01:** Fundamentals & Wraps: First-principles of decorators, manual wrapping vs `@` syntax, universal template, metadata loss bug, and `@functools.wraps`
+- **02:** Arguments & Chaining: 3-tier nested closures for decorators with arguments, stacking multiple decorators, and the Onion execution model (bottom-up wrapping, top-down execution)
+- **03:** Production Patterns: Latency profiler (`@timer`), resilient network retry with exponential backoff (`@retry` for LLM APIs), and Role-Based Access Control (`@require_role`)
+- **04:** Class Decorators & Caching: Classes as decorators (`__call__`), Class Decorators (model registry), custom memoization from scratch ($O(2^N) \rightarrow O(N)$), and `@functools.lru_cache`
+- **Workbook:** [`my_practice.py`](./day12/my_practice.py) — 6 Hands-on coding tasks with automated test suite for self-practice
+
 ---
 
 ## 🛠️ Tech Stack & Tools
