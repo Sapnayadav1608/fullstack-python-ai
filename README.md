@@ -122,6 +122,13 @@ This repository documents my daily code, structured notes, logic exercises, and 
 - **04:** Class Decorators & Caching: Classes as decorators (`__call__`), Class Decorators (model registry), custom memoization from scratch ($O(2^N) \rightarrow O(N)$), and `@functools.lru_cache`
 - **Workbook:** [`my_practice.py`](./day12/my_practice.py) — 6 Hands-on coding tasks with automated test suite for self-practice
 
+### 📍 [Day 13: Python Iterators, Generators & Context Managers — Streaming & Memory Optimization](./day13)
+- **01:** Iteration Protocol: Iterable vs Iterator, `__iter__()` and `__next__()`, CPython `for` loop emulation, exhaustion trap, and AI `BatchDatasetIterator`
+- **02:** Generators & `yield`: Frame suspension, CPython lifecycle states, Generator expressions vs List comprehensions, live 10M item benchmark ($O(1)$ vs $O(N)$ RAM), and 50GB log streaming
+- **03:** Pipelines & AI Streaming: Unix pipe generator chaining, `yield from` sub-generator delegation, recursive data flattener, bidirectional coroutine `.send()`, and LLM token streamer
+- **04:** Context Managers & `with`: Resource leak prevention, class-based `__enter__`/`__exit__`, `@contextlib.contextmanager` generator bridge, and Atomic DB Transaction auto-rollback
+- **Workbook:** [`my_practice.py`](./day13/my_practice.py) — 6 Hands-on coding tasks with automated test suite for self-practice
+
 ---
 
 ## 🛠️ Tech Stack & Tools
