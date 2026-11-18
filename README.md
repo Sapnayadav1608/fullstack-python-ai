@@ -129,6 +129,13 @@ This repository documents my daily code, structured notes, logic exercises, and 
 - **04:** Context Managers & `with`: Resource leak prevention, class-based `__enter__`/`__exit__`, `@contextlib.contextmanager` generator bridge, and Atomic DB Transaction auto-rollback
 - **Workbook:** [`my_practice.py`](./day13/my_practice.py) — 6 Hands-on coding tasks with automated test suite for self-practice
 
+### 📍 [Day 14: Object-Oriented Programming (OOP) Part 1 — Architecture & Encapsulation](./day14)
+- **01:** Classes & `self`: Instantiation lifecycle (`__new__` vs `__init__`), desugaring `self` (`Class.fn(obj)`), `__str__` vs `__repr__`, and `LLMPromptTemplate`
+- **02:** Namespaces & Variables: `__dict__` introspection, class vs instance state, the catastrophic mutable class variable bug, and `__slots__` 6x memory reduction
+- **03:** Method Types: Instance (`self`), Class (`@classmethod` / `cls` factory constructors), Static (`@staticmethod` utilities), and `LLMClient` AI service
+- **04:** Encapsulation: Public, protected (`_`), and private name mangling (`__`), `@property` getters, setters with validation, and `APIKeyManager`
+- **Workbook:** [`my_practice.py`](./day14/my_practice.py) — 6 Hands-on coding tasks with automated test suite for self-practice
+
 ---
 
 ## 🛠️ Tech Stack & Tools
