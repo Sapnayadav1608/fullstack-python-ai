@@ -136,6 +136,13 @@ This repository documents my daily code, structured notes, logic exercises, and 
 - **04:** Encapsulation: Public, protected (`_`), and private name mangling (`__`), `@property` getters, setters with validation, and `APIKeyManager`
 - **Workbook:** [`my_practice.py`](./day14/my_practice.py) — 6 Hands-on coding tasks with automated test suite for self-practice
 
+### 📍 [Day 15: Object-Oriented Programming (OOP) Part 2 — Inheritance, MRO, Polymorphism & ABCs](./day15)
+- **01:** Inheritance & `super()`: Single/multi-level inheritance, dynamic `super()` MRO proxy, state initialization, and `FineTunedGeminiClient` extending `AIModelClient`
+- **02:** Multiple Inheritance & MRO: The Diamond Problem, C3 Linearization algorithm ($L[C]$ invariants), Mixin composition pattern, and `AIAgent` with serialization/rate-limiting mixins
+- **03:** Polymorphism & Duck Typing: Method overriding, runtime polymorphic dispatch, Pythonic duck typing ("quacks like a duck"), structural subtyping with `typing.Protocol`, and multimodal ingestion pipeline
+- **04:** Abstract Base Classes & Interfaces: `abc.ABC`, `@abstractmethod`, interface enforcement, instantiation prevention, and pluggable Vector Database architecture (`PineconeAdapter`, `ChromaDBAdapter`)
+- **Workbook:** [`my_practice.py`](./day15/my_practice.py) — 6 Hands-on coding tasks with automated test suite for self-practice
+
 ---
 
 ## 🛠️ Tech Stack & Tools
