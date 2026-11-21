@@ -12,6 +12,7 @@ Features:
 - High Readability Bold Typography (Segoe UI Bold + Consolas Bold)
 - Strict Safe Zone: Content ends at Y = 1330, Progress bar at Y = 1350-1360
 - 560px bottom clear zone (Y: 1360 to 1920) for Instagram captions and UI!
+- Zero Overflow: All text strictly padded inside cards and pills!
 - Zero Personal Name (Generic Track Branding)
 - Audio: Pure clean video (no audio track) for real voiceover recording
 - Output paths: D:/learn-python/day14
@@ -34,7 +35,7 @@ SCENE_DURATION = 8.0
 FONT_HERO = ImageFont.truetype("C:/Windows/Fonts/segoeuib.ttf", 52)
 FONT_TITLE = ImageFont.truetype("C:/Windows/Fonts/segoeuib.ttf", 40)
 FONT_HEADING = ImageFont.truetype("C:/Windows/Fonts/segoeuib.ttf", 32)
-FONT_SUB = ImageFont.truetype("C:/Windows/Fonts/segoeuib.ttf", 27)
+FONT_SUB = ImageFont.truetype("C:/Windows/Fonts/segoeuib.ttf", 26)
 FONT_BODY = ImageFont.truetype("C:/Windows/Fonts/segoeuib.ttf", 23)
 FONT_BADGE = ImageFont.truetype("C:/Windows/Fonts/segoeuib.ttf", 23)
 FONT_CODE = ImageFont.truetype("C:/Windows/Fonts/consolab.ttf", 24)
@@ -206,8 +207,8 @@ def build_base_scene_1():
     draw.text((100, c_y0 + 30), "The Class Blueprint: Bundling State & Behavior", font=FONT_BADGE, fill=COLOR_MUTED, anchor="lm")
     draw.line([70, c_y0 + 52, WIDTH - 70, c_y0 + 52], fill=(55, 38, 48, 180), width=1)
 
-    # Bottom Pill
-    draw.rounded_rectangle([80, 1250, WIDTH - 80, 1330], radius=22, fill=(22, 15, 20, 245), outline=COLOR_GOLD, width=2)
+    # Bottom Pill (Generous 147px padding, perfectly centered)
+    draw.rounded_rectangle([70, 1250, WIDTH - 70, 1330], radius=22, fill=(22, 15, 20, 245), outline=COLOR_GOLD, width=2)
     draw.text((WIDTH // 2, 1290), "🔥 Day 14 is live! Master Object-Oriented Python! 👇", font=FONT_SUB, fill=COLOR_GOLD, anchor="mm")
 
     return img
@@ -242,22 +243,22 @@ def build_base_scene_2():
     draw.text((WIDTH // 2, 246), "The self Parameter", font=FONT_HERO, fill=COLOR_WHITE, anchor="mm")
     draw.text((WIDTH // 2, 292), "How Python Dispatches Methods Under The Hood", font=FONT_SUB, fill=COLOR_GOLD, anchor="mm")
 
-    # Top Card: The Architecture
+    # Top Card: The Architecture (Clean vertical padding)
     card_y0, card_y1 = 330, 660
     draw.rounded_rectangle([70, card_y0, WIDTH - 70, card_y1], radius=22, fill=COLOR_CARD_BG, outline=COLOR_GREEN, width=2)
     draw.text((WIDTH // 2, card_y0 + 32), "THE TWO STAGES OF INSTANTIATION", font=FONT_HEADING, fill=COLOR_GREEN, anchor="mm")
 
     # Item 1: __new__ vs __init__
-    draw.rounded_rectangle([100, card_y0 + 64, WIDTH - 100, card_y0 + 154], radius=14, fill=COLOR_INNER_BG, outline=COLOR_AMBER, width=2)
-    draw.text((120, card_y0 + 84), "1. __new__(cls) vs __init__(self):", font=FONT_SUB, fill=COLOR_AMBER)
-    draw.text((120, card_y0 + 116), "   __new__ allocates raw memory | __init__ initializes attributes.", font=FONT_BODY, fill=COLOR_CREAM)
+    draw.rounded_rectangle([100, card_y0 + 64, WIDTH - 100, card_y0 + 152], radius=14, fill=COLOR_INNER_BG, outline=COLOR_AMBER, width=2)
+    draw.text((120, card_y0 + 82), "1. __new__(cls) vs __init__(self):", font=FONT_SUB, fill=COLOR_AMBER)
+    draw.text((120, card_y0 + 114), "   __new__ allocates raw memory | __init__ initializes attributes.", font=FONT_BODY, fill=COLOR_CREAM)
 
-    # Item 2: self Desugaring
-    draw.rounded_rectangle([100, card_y0 + 168, WIDTH - 100, card_y0 + 310], radius=14, fill=COLOR_INNER_BG, outline=COLOR_CYAN, width=2)
-    draw.text((120, card_y0 + 188), "2. The `self` Mechanism Demystified:", font=FONT_SUB, fill=COLOR_CYAN)
-    draw.text((120, card_y0 + 220), "   `dev.introduce()` is pure syntactic sugar for:", font=FONT_BODY, fill=COLOR_CREAM)
-    draw.text((120, card_y0 + 252), "   `Developer.introduce(dev)` -> Instance passed as 1st arg!", font=FONT_BODY, fill=COLOR_GOLD)
-    draw.text((120, card_y0 + 284), "   `__str__` (for users) vs `__repr__` (for debuggers & REPL).", font=FONT_BODY, fill=COLOR_GREEN)
+    # Item 2: self Desugaring (Spacious 16px bottom padding)
+    draw.rounded_rectangle([100, card_y0 + 164, WIDTH - 100, card_y0 + 316], radius=14, fill=COLOR_INNER_BG, outline=COLOR_CYAN, width=2)
+    draw.text((120, card_y0 + 184), "2. The `self` Mechanism Demystified:", font=FONT_SUB, fill=COLOR_CYAN)
+    draw.text((120, card_y0 + 216), "   `dev.introduce()` is pure syntactic sugar for:", font=FONT_BODY, fill=COLOR_CREAM)
+    draw.text((120, card_y0 + 246), "   `Developer.introduce(dev)` -> Instance passed as 1st arg!", font=FONT_BODY, fill=COLOR_GOLD)
+    draw.text((120, card_y0 + 276), "   `__str__` (for users) vs `__repr__` (for debuggers & REPL).", font=FONT_BODY, fill=COLOR_GREEN)
 
     # Bottom Code Card (Y: 680 to 1230)
     c_y0, c_y1 = 680, 1230
@@ -265,9 +266,9 @@ def build_base_scene_2():
     draw.text((100, c_y0 + 30), "CPython Under-The-Hood: self Dispatched Explicitly", font=FONT_BADGE, fill=COLOR_MUTED, anchor="lm")
     draw.line([70, c_y0 + 52, WIDTH - 70, c_y0 + 52], fill=(55, 38, 48, 180), width=1)
 
-    # Bottom Takeaway Pill
-    draw.rounded_rectangle([80, 1250, WIDTH - 80, 1330], radius=22, fill=(22, 15, 20, 245), outline=COLOR_GREEN, width=2)
-    draw.text((WIDTH // 2, 1290), "⚡ 'self' is not a keyword — it's an instance pointer passed by CPython! 🎯", font=FONT_SUB, fill=COLOR_GREEN, anchor="mm")
+    # Bottom Takeaway Pill (Clean text, 100px safe margins)
+    draw.rounded_rectangle([70, 1250, WIDTH - 70, 1330], radius=22, fill=(22, 15, 20, 245), outline=COLOR_GREEN, width=2)
+    draw.text((WIDTH // 2, 1290), "⚡ 'self' is simply an instance pointer passed by CPython! 🎯", font=FONT_SUB, fill=COLOR_GREEN, anchor="mm")
 
     return img
 
@@ -301,7 +302,7 @@ def build_base_scene_3():
     draw.text((WIDTH // 2, 246), "The 3 Method Flavors", font=FONT_HERO, fill=COLOR_WHITE, anchor="mm")
     draw.text((WIDTH // 2, 292), "Instance Methods, @classmethod & @staticmethod", font=FONT_SUB, fill=COLOR_GOLD, anchor="mm")
 
-    # Top Card: Method Comparison
+    # Top Card: Method Comparison (76px boxes, generous padding)
     card_y0, card_y1 = 330, 660
     draw.rounded_rectangle([70, card_y0, WIDTH - 70, card_y1], radius=22, fill=COLOR_CARD_BG, outline=COLOR_ORANGE, width=2)
     draw.text((WIDTH // 2, card_y0 + 32), "WHICH METHOD FLAVOR TO USE?", font=FONT_HEADING, fill=COLOR_ORANGE, anchor="mm")
@@ -312,12 +313,12 @@ def build_base_scene_3():
         ("3. @staticmethod", "Isolated utility math/helpers (no self, no cls).", COLOR_CYAN)
     ]
 
-    p_y = card_y0 + 64
+    p_y = card_y0 + 58
     for m_title, m_desc, col in methods:
-        draw.rounded_rectangle([100, p_y, WIDTH - 100, p_y + 70], radius=14, fill=COLOR_INNER_BG, outline=col, width=2)
-        draw.text((120, p_y + 16), m_title, font=FONT_SUB, fill=col)
+        draw.rounded_rectangle([100, p_y, WIDTH - 100, p_y + 76], radius=14, fill=COLOR_INNER_BG, outline=col, width=2)
+        draw.text((120, p_y + 13), m_title, font=FONT_SUB, fill=col)
         draw.text((120, p_y + 44), m_desc, font=FONT_BODY, fill=COLOR_CREAM)
-        p_y += 82
+        p_y += 86
 
     # Bottom Code Card (Y: 680 to 1230)
     c_y0, c_y1 = 680, 1230
@@ -325,9 +326,9 @@ def build_base_scene_3():
     draw.text((100, c_y0 + 30), "Alternative Factory Constructor Pattern", font=FONT_BADGE, fill=COLOR_MUTED, anchor="lm")
     draw.line([70, c_y0 + 52, WIDTH - 70, c_y0 + 52], fill=(55, 38, 48, 180), width=1)
 
-    # Bottom Takeaway Pill
-    draw.rounded_rectangle([80, 1250, WIDTH - 80, 1330], radius=22, fill=(22, 15, 20, 245), outline=COLOR_ORANGE, width=2)
-    draw.text((WIDTH // 2, 1290), "🔥 Clean factory constructors with @classmethod beat ugly __init__ flags! 🚀", font=FONT_SUB, fill=COLOR_ORANGE, anchor="mm")
+    # Bottom Takeaway Pill (FIXED: Clean 721px text inside 940px box -> 109px safe padding!)
+    draw.rounded_rectangle([70, 1250, WIDTH - 70, 1330], radius=22, fill=(22, 15, 20, 245), outline=COLOR_ORANGE, width=2)
+    draw.text((WIDTH // 2, 1290), "🔥 Build clean factory constructors with @classmethod! 🚀", font=FONT_SUB, fill=COLOR_ORANGE, anchor="mm")
 
     return img
 
@@ -361,7 +362,7 @@ def build_base_scene_4():
     draw.text((WIDTH // 2, 246), "Encapsulation & @property", font=FONT_HERO, fill=COLOR_WHITE, anchor="mm")
     draw.text((WIDTH // 2, 292), "Pythonic Data Protection & Bounds Validation", font=FONT_SUB, fill=COLOR_GOLD, anchor="mm")
 
-    # Top Card: Encapsulation Levels
+    # Top Card: Encapsulation Levels (76px boxes, generous padding)
     card_y0, card_y1 = 330, 660
     draw.rounded_rectangle([70, card_y0, WIDTH - 70, card_y1], radius=22, fill=COLOR_CARD_BG, outline=COLOR_CYAN, width=2)
     draw.text((WIDTH // 2, card_y0 + 32), "THE 3 VISIBILITY CONVENTIONS IN PYTHON", font=FONT_HEADING, fill=COLOR_CYAN, anchor="mm")
@@ -372,12 +373,12 @@ def build_base_scene_4():
         ("PRIVATE (__name)", "Double underscore: CPython Name Mangling (_Class__name).", COLOR_RED)
     ]
 
-    p_y = card_y0 + 64
+    p_y = card_y0 + 58
     for l_title, l_desc, col in levels:
-        draw.rounded_rectangle([100, p_y, WIDTH - 100, p_y + 70], radius=14, fill=COLOR_INNER_BG, outline=col, width=2)
-        draw.text((120, p_y + 16), l_title, font=FONT_SUB, fill=col)
+        draw.rounded_rectangle([100, p_y, WIDTH - 100, p_y + 76], radius=14, fill=COLOR_INNER_BG, outline=col, width=2)
+        draw.text((120, p_y + 13), l_title, font=FONT_SUB, fill=col)
         draw.text((120, p_y + 44), l_desc, font=FONT_BODY, fill=COLOR_CREAM)
-        p_y += 82
+        p_y += 86
 
     # Bottom Code Card (Y: 680 to 1230)
     c_y0, c_y1 = 680, 1230
@@ -385,9 +386,9 @@ def build_base_scene_4():
     draw.text((100, c_y0 + 30), "Pythonic Getter & Setter with Strict Validation", font=FONT_BADGE, fill=COLOR_MUTED, anchor="lm")
     draw.line([70, c_y0 + 52, WIDTH - 70, c_y0 + 52], fill=(55, 38, 48, 180), width=1)
 
-    # Bottom Takeaway Pill
-    draw.rounded_rectangle([80, 1250, WIDTH - 80, 1330], radius=22, fill=(22, 15, 20, 245), outline=COLOR_CYAN, width=2)
-    draw.text((WIDTH // 2, 1290), "🛡️ Eliminates clumsy get_x() and set_x() Java anti-patterns! ⚡", font=FONT_SUB, fill=COLOR_CYAN, anchor="mm")
+    # Bottom Takeaway Pill (Clean text, 70px safe margin)
+    draw.rounded_rectangle([70, 1250, WIDTH - 70, 1330], radius=22, fill=(22, 15, 20, 245), outline=COLOR_CYAN, width=2)
+    draw.text((WIDTH // 2, 1290), "🛡️ @property eliminates clumsy getter/setter anti-patterns! ⚡", font=FONT_SUB, fill=COLOR_CYAN, anchor="mm")
 
     return img
 
@@ -442,8 +443,8 @@ def build_base_scene_5():
     draw.text((100, b_y0 + 30), "Day 14 Modules & Student Workbook Checklist", font=FONT_BADGE, fill=COLOR_GOLD, anchor="lm")
     draw.line([70, b_y0 + 52, WIDTH - 70, b_y0 + 52], fill=(55, 38, 48, 180), width=1)
 
-    # Bottom Pill
-    draw.rounded_rectangle([80, 1250, WIDTH - 80, 1330], radius=22, fill=(22, 15, 20, 245), outline=COLOR_GOLD, width=2)
+    # Bottom Pill (49px safe margin)
+    draw.rounded_rectangle([70, 1250, WIDTH - 70, 1330], radius=22, fill=(22, 15, 20, 245), outline=COLOR_GOLD, width=2)
     draw.text((WIDTH // 2, 1290), "📂 Code & Practice Workbook live on GitHub! Follow for Day 15! 👇", font=FONT_SUB, fill=COLOR_GOLD, anchor="mm")
 
     return img

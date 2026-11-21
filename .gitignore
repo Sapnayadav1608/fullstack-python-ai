@@ -24,6 +24,8 @@ Thumbs.db
 *.mov
 *.avi
 *.mkv
+*.mp3
+*.wav
 *temp_frames*/
 
 # Video Previews
