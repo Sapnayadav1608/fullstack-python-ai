@@ -1,23 +1,25 @@
 """
-Day 15: Clean Editorial Storyline Tech Reel Generator (Times New Roman Edition)
-================================================================================
+Day 15: High-Visibility Bold Times New Roman Reel Generator
+===========================================================
 30-Day Full Stack Python + AI Engineering Challenge
 
 Theme: The 2:00 AM Production Outage Story
        Advanced Object-Oriented Architecture in Python
-       (Inheritance, Dynamic super(), Diamond Problem, C3 MRO, Mixins & Vector DB ABCs)
 
-Aesthetic Philosophy:
-- Typography: Times New Roman Bold & Italic (Refined, Editorial, Clean, Prestigious)
-- Palette: Deep Matte Obsidian (#0A0A0C), Warm Ivory (#F8FAFC), Editorial Gold (#D4AF37),
-  Muted Platinum (#94A3B8), Crisp Emerald (#10B981)
-- Clean Minimalist UI: No visual clutter, no noisy grids, generous breathing room
-- Dynamic Storyline Arc:
-  * Scene 1: The Production Outage (The Relatable Hook)
-  * Scene 2: The Hardcoded Trap vs Dynamic super() Proxy (With Typewriter Code)
-  * Scene 3: The Infamous Diamond Trap & C3 MRO (Clean Minimalist Graph)
-  * Scene 4: Senior Architecture - Mixins & Pluggable Vector DBs (Pinecone & ChromaDB)
-  * Scene 5: Mastery Milestones & 100% Architect Ready Checklist
+Visibility & Typography Fixes:
+- 100% Bold Typography: Uses Times New Roman Bold (`timesbd.ttf`) & Bold Italic (`timesbi.ttf`)
+- Maximum Contrast Color Palette:
+  * Pure Crisp White (#FFFFFF) & Radiant Bright Gold (#FFD700)
+  * High-Contrast Light Platinum (#E2E8F0) - NO low-contrast dull greys!
+  * Vivid Neon Green (#34D399) & Sky Cyan (#38BDF8)
+- Ultra-Legible Code: Consolas Bold 26px with bright syntax highlighting
+- Clean, Uncluttered Layout: Generous breathing room, clear 2px card borders
+- Storyline Arc:
+  * Act 1: The Production Outage (The Relatable Hook)
+  * Act 2: The Hardcoded Parent Trap vs Dynamic super() Proxy
+  * Act 3: The Infamous Diamond Trap & C3 MRO (Clean Minimalist Graph)
+  * Act 4: Senior Architecture - Mixins & Pluggable Vector DBs (Pinecone & ChromaDB)
+  * Act 5: Mastery Milestones & 100% Architect Ready Checklist
 - Strict Instagram Safe Zone: Content ends at Y <= 1320, Progress bar at Y = 1350
 - Zero personal names on screen (Generic track branding)
 - Pure silent video (audio=False) for real voiceover recording
@@ -36,32 +38,31 @@ WIDTH, HEIGHT = 1080, 1920
 FPS = 24
 SCENE_DURATION = 8.0
 
-# Times New Roman (Clean, Refined, Editorial) + Consolas Bold (Code)
-FONT_HERO = ImageFont.truetype("C:/Windows/Fonts/timesbd.ttf", 52)
-FONT_TITLE = ImageFont.truetype("C:/Windows/Fonts/timesbd.ttf", 40)
-FONT_HEADING = ImageFont.truetype("C:/Windows/Fonts/timesbd.ttf", 32)
-FONT_SUB = ImageFont.truetype("C:/Windows/Fonts/timesi.ttf", 28)
-FONT_BODY = ImageFont.truetype("C:/Windows/Fonts/times.ttf", 26)
-FONT_BODY_BD = ImageFont.truetype("C:/Windows/Fonts/timesbd.ttf", 26)
-FONT_BADGE = ImageFont.truetype("C:/Windows/Fonts/timesbd.ttf", 22)
+# 100% BOLD, High-Visibility Typography
+FONT_HERO = ImageFont.truetype("C:/Windows/Fonts/timesbd.ttf", 54)
+FONT_TITLE = ImageFont.truetype("C:/Windows/Fonts/timesbd.ttf", 42)
+FONT_HEADING = ImageFont.truetype("C:/Windows/Fonts/timesbd.ttf", 34)
+FONT_SUB = ImageFont.truetype("C:/Windows/Fonts/timesbi.ttf", 30)
+FONT_BODY = ImageFont.truetype("C:/Windows/Fonts/timesbd.ttf", 26)
+FONT_BADGE = ImageFont.truetype("C:/Windows/Fonts/timesbd.ttf", 23)
 FONT_CODE = ImageFont.truetype("C:/Windows/Fonts/consolab.ttf", 25)
 FONT_CODE_SM = ImageFont.truetype("C:/Windows/Fonts/consolab.ttf", 22)
 FONT_STAT = ImageFont.truetype("C:/Windows/Fonts/timesbd.ttf", 54)
-FONT_MINI = ImageFont.truetype("C:/Windows/Fonts/times.ttf", 20)
+FONT_MINI = ImageFont.truetype("C:/Windows/Fonts/timesbd.ttf", 21)
 
-# Clean Editorial Palette
-COLOR_BG_DARK = np.array([11, 11, 14], dtype=np.float32)   # Deep Matte Obsidian
-COLOR_CARD_BG = (18, 18, 24, 250)                          # Clean Dark Container
-COLOR_INNER_BG = (12, 12, 16, 255)                         # Pitch Black Inner
+# High-Contrast Palette: NO dark/dull grey text!
+COLOR_BG_DARK = np.array([10, 8, 14], dtype=np.float32)    # Deep Obsidian
+COLOR_CARD_BG = (22, 18, 28, 252)                          # Crisp Dark Container
+COLOR_INNER_BG = (12, 10, 16, 255)                         # Pitch Black Inner
 
-COLOR_WHITE = (248, 250, 252)          # Clean Ivory White
-COLOR_MUTED = (156, 163, 175)          # Soft Slate
-COLOR_GOLD = (212, 175, 55)            # Editorial Warm Gold
-COLOR_GOLD_LIGHT = (250, 230, 150)     # Pale Champagne
-COLOR_RED = (239, 68, 68)              # Crimson Warning
-COLOR_GREEN = (16, 185, 129)           # Refined Emerald
-COLOR_CYAN = (56, 189, 248)            # Sky Blue
-COLOR_BORDER = (45, 45, 58)            # Clean 1px Subtle Border
+COLOR_WHITE = (255, 255, 255)          # 100% Pure White (Razor Sharp)
+COLOR_LIGHT = (226, 232, 240)          # Light Platinum (High Visibility)
+COLOR_GOLD = (255, 215, 0)             # Radiant Bright Gold
+COLOR_CREAM = (254, 243, 199)          # Pale Warm Ivory
+COLOR_RED = (248, 113, 113)            # Bright Warning Coral/Red
+COLOR_GREEN = (52, 211, 153)           # Bright Neon Emerald
+COLOR_CYAN = (56, 189, 248)            # Bright Sky Cyan
+COLOR_BORDER = (75, 70, 95)            # Crisp, clearly visible card border
 
 
 def ease_out(t):
@@ -73,42 +74,42 @@ def ease_out(t):
 def render_clean_background(t, global_progress):
     """
     Renders an ultra-clean, minimalist matte dark canvas with a subtle vignette.
-    No noisy grids or cluttered orbs—pure, elegant editorial backdrop.
+    Crisp, clear, high contrast.
     """
     y, x = np.ogrid[:HEIGHT, :WIDTH]
     base = np.zeros((HEIGHT, WIDTH, 3), dtype=np.float32)
     base[:, :] = COLOR_BG_DARK
 
-    # Soft, subtle warm center highlight
+    # Subtle warm center aura
     d = np.sqrt((x - WIDTH // 2)**2 + (y - 700)**2)
     w = (np.clip(1.0 - d / 900.0, 0, 1) ** 2.2)[:, :, None]
-    base += w * np.array([28, 26, 32], dtype=np.float32)
+    base += w * np.array([32, 26, 38], dtype=np.float32)
 
     img = Image.fromarray(np.clip(base, 0, 255).astype(np.uint8))
     draw = ImageDraw.Draw(img, "RGBA")
 
     # Header Badge (Y: 125 to 181)
-    badge_w, badge_h = 560, 56
+    badge_w, badge_h = 580, 56
     bx0, by0 = (WIDTH - badge_w) // 2, 125
-    draw.rounded_rectangle([bx0, by0, bx0 + badge_w, by0 + badge_h], radius=28, fill=(22, 22, 28, 240), outline=COLOR_GOLD, width=1)
-    draw.text((WIDTH // 2, by0 + badge_h // 2), "DAY 15 / 30  •  THE OOP ARCHITECTURE STORY", font=FONT_BADGE, fill=COLOR_GOLD_LIGHT, anchor="mm")
+    draw.rounded_rectangle([bx0, by0, bx0 + badge_w, by0 + badge_h], radius=28, fill=(28, 22, 34, 250), outline=COLOR_GOLD, width=2)
+    draw.text((WIDTH // 2, by0 + badge_h // 2), "DAY 15 / 30  •  THE OOP ARCHITECTURE STORY", font=FONT_BADGE, fill=COLOR_GOLD, anchor="mm")
 
-    # Subtitle Branding (Clean, Refined)
-    draw.text((WIDTH // 2, 202), "30 DAYS FULL STACK PYTHON + AI ENGINEERING", font=FONT_MINI, fill=COLOR_MUTED, anchor="mm")
+    # Subtitle Branding (Clean, High Visibility)
+    draw.text((WIDTH // 2, 202), "30 DAYS FULL STACK PYTHON + AI ENGINEERING", font=FONT_MINI, fill=COLOR_LIGHT, anchor="mm")
 
-    # Clean Gold Progress Bar (Y: 1350 to 1358)
+    # Clean Gold Progress Bar (Y: 1350 to 1360)
     bar_y = 1350
     bar_w = WIDTH - 140
-    draw.rounded_rectangle([70, bar_y, 70 + bar_w, bar_y + 8], radius=4, fill=(24, 24, 30), outline=(45, 45, 55))
+    draw.rounded_rectangle([70, bar_y, 70 + bar_w, bar_y + 10], radius=5, fill=(24, 20, 30), outline=COLOR_BORDER, width=1)
     fill_len = int(bar_w * global_progress)
     if fill_len > 0:
-        draw.rounded_rectangle([70, bar_y, 70 + fill_len, bar_y + 8], radius=4, fill=COLOR_GOLD)
+        draw.rounded_rectangle([70, bar_y, 70 + fill_len, bar_y + 10], radius=5, fill=COLOR_GOLD)
 
     return img, draw
 
 
-def draw_clean_card(draw, bbox, fill=COLOR_CARD_BG, outline=COLOR_BORDER, radius=18, width=1):
-    """Draws a clean, elegant card with subtle borders and no visual clutter."""
+def draw_clean_card(draw, bbox, fill=COLOR_CARD_BG, outline=COLOR_BORDER, radius=18, width=2):
+    """Draws a clean, high-contrast card with crisp 2px borders."""
     draw.rounded_rectangle(bbox, radius=radius, fill=fill, outline=outline, width=width)
 
 
@@ -119,52 +120,52 @@ def make_frame_scene_1(t):
     prog = np.clip((t / 8.0) * 0.20, 0.0, 0.20)
     img, draw = render_clean_background(t, prog)
 
-    # Hero Title & Subtitle in Times New Roman
+    # Hero Title & Subtitle in Times New Roman Bold
     draw.text((WIDTH // 2, 246), "Why 90% of AI Apps Crash", font=FONT_HERO, fill=COLOR_WHITE, anchor="mm")
-    draw.text((WIDTH // 2, 296), "The 2:00 AM Production Bug & The OOP Solution", font=FONT_SUB, fill=COLOR_GOLD, anchor="mm")
+    draw.text((WIDTH // 2, 296), "The 2:00 AM Production Bug & The Senior OOP Solution", font=FONT_SUB, fill=COLOR_GOLD, anchor="mm")
 
-    # Card 1: The Outage Incident (Clean, High-Contrast)
+    # Card 1: The Outage Incident (Bold, High-Contrast)
     card_y0 = 345
-    draw_clean_card(draw, [80, card_y0, WIDTH - 80, card_y0 + 265], outline=(180, 50, 50), width=1)
+    draw_clean_card(draw, [80, card_y0, WIDTH - 80, card_y0 + 265], outline=COLOR_RED, width=2)
     
     # Incident Pill
-    draw.rounded_rectangle([115, card_y0 + 24, 395, card_y0 + 64], radius=6, fill=(45, 18, 22), outline=COLOR_RED, width=1)
-    draw.text((255, card_y0 + 44), "PRODUCTION INCIDENT: 02:14 AM", font=FONT_MINI, fill=COLOR_RED, anchor="mm")
+    draw.rounded_rectangle([115, card_y0 + 22, 420, card_y0 + 64], radius=6, fill=(50, 15, 20), outline=COLOR_RED, width=1)
+    draw.text((267, card_y0 + 43), "PRODUCTION INCIDENT: 02:14 AM", font=FONT_MINI, fill=COLOR_RED, anchor="mm")
     
     draw.text((WIDTH // 2, card_y0 + 95), "Fatal: Inconsistent Method Resolution Order (MRO)", font=FONT_HEADING, fill=COLOR_WHITE, anchor="mm")
 
-    # Story Explanations
-    draw.rounded_rectangle([115, card_y0 + 125, WIDTH - 115, card_y0 + 240], radius=10, fill=COLOR_INNER_BG, outline=COLOR_BORDER)
+    # Story Explanation (Pure White & Gold, 100% Visible)
+    draw.rounded_rectangle([115, card_y0 + 125, WIDTH - 115, card_y0 + 240], radius=10, fill=COLOR_INNER_BG, outline=COLOR_BORDER, width=1)
     draw.text((135, card_y0 + 148), "• A junior developer merged multiple inheritance without MRO knowledge.", font=FONT_BODY, fill=COLOR_WHITE)
     draw.text((135, card_y0 + 180), "• Base class executed twice per prompt -> 5,000 duplicate LLM API calls!", font=FONT_BODY, fill=COLOR_GOLD)
-    draw.text((135, card_y0 + 212), "• Context window corrupted, cloud bill doubled, server crashed.", font=FONT_BODY, fill=COLOR_MUTED)
+    draw.text((135, card_y0 + 212), "• Context window corrupted, cloud bill doubled, server crashed.", font=FONT_BODY, fill=COLOR_LIGHT)
 
-    # Card 2: The Senior Architect Roadmap (Clean, Spacious)
+    # Card 2: The Senior Architect Roadmap (Crisp Gold & White)
     c2_y0 = 635
-    draw_clean_card(draw, [80, c2_y0, WIDTH - 80, c2_y0 + 580], outline=COLOR_GOLD, width=1)
+    draw_clean_card(draw, [80, c2_y0, WIDTH - 80, c2_y0 + 580], outline=COLOR_GOLD, width=2)
     draw.text((WIDTH // 2, c2_y0 + 38), "The Senior Architect Blueprint", font=FONT_HEADING, fill=COLOR_GOLD, anchor="mm")
 
     pillars = [
-        ("01", "Stop Hardcoding Parent Classes", "Why super() is a dynamic runtime proxy, not a parent call"),
-        ("02", "Tame The Diamond Problem", "How Python's C3 Linearization guarantees single execution"),
-        ("03", "Modular Mixin Composition", "Stack orthogonal behaviors like Lego bricks with zero bloat"),
-        ("04", "Abstract Base Classes (abc.ABC)", "Build swappable Vector DB interfaces with zero vendor lock-in")
+        ("01", "Stop Hardcoding Parent Classes", "Why super() is a dynamic runtime proxy, not a parent call", COLOR_GREEN),
+        ("02", "Tame The Diamond Problem", "How Python's C3 Linearization guarantees single execution", COLOR_CYAN),
+        ("03", "Modular Mixin Composition", "Stack orthogonal behaviors like Lego bricks with zero bloat", COLOR_GOLD),
+        ("04", "Abstract Base Classes (abc.ABC)", "Build swappable Vector DB interfaces with zero vendor lock-in", COLOR_WHITE)
     ]
 
     py = c2_y0 + 75
-    for num, title, desc in pillars:
-        draw.rounded_rectangle([115, py, WIDTH - 115, py + 95], radius=10, fill=COLOR_INNER_BG, outline=COLOR_BORDER)
+    for num, title, desc, tag_col in pillars:
+        draw.rounded_rectangle([115, py, WIDTH - 115, py + 95], radius=10, fill=COLOR_INNER_BG, outline=COLOR_BORDER, width=1)
         # Gold Number Tag
-        draw.rounded_rectangle([130, py + 18, 185, py + 78], radius=8, fill=(28, 25, 20), outline=COLOR_GOLD, width=1)
+        draw.rounded_rectangle([130, py + 18, 185, py + 78], radius=8, fill=(35, 28, 20), outline=COLOR_GOLD, width=1)
         draw.text((158, py + 48), num, font=FONT_TITLE, fill=COLOR_GOLD, anchor="mm")
         # Text
-        draw.text((205, py + 26), title, font=FONT_BODY_BD, fill=COLOR_WHITE)
-        draw.text((205, py + 58), desc, font=FONT_BODY, fill=COLOR_MUTED)
+        draw.text((205, py + 26), title, font=FONT_BODY, fill=COLOR_WHITE)
+        draw.text((205, py + 58), desc, font=FONT_BODY, fill=COLOR_LIGHT)
         py += 112
 
     # Bottom Callout Pill (Y: 1240 to 1320)
-    draw_clean_card(draw, [80, 1240, WIDTH - 80, 1320], outline=COLOR_GOLD, radius=20, width=1)
-    draw.text((WIDTH // 2, 1280), "Let's fix this architecture step by step ->", font=FONT_SUB, fill=COLOR_GOLD_LIGHT, anchor="mm")
+    draw_clean_card(draw, [80, 1240, WIDTH - 80, 1320], outline=COLOR_GOLD, radius=20, width=2)
+    draw.text((WIDTH // 2, 1280), "Let's fix this architecture step by step ->", font=FONT_SUB, fill=COLOR_GOLD, anchor="mm")
 
     return np.array(img)
 
@@ -181,13 +182,13 @@ def make_frame_scene_2(t):
 
     # Top Comparison Panel (Y: 345 to 640)
     card_y0 = 345
-    draw_clean_card(draw, [80, card_y0, WIDTH - 80, card_y0 + 295], outline=COLOR_BORDER, width=1)
+    draw_clean_card(draw, [80, card_y0, WIDTH - 80, card_y0 + 295], outline=COLOR_BORDER, width=2)
     draw.text((WIDTH // 2, card_y0 + 34), "The Rookie Mistake vs The Production Pattern", font=FONT_HEADING, fill=COLOR_WHITE, anchor="mm")
 
     # The Mistake Box
-    draw.rounded_rectangle([115, card_y0 + 65, WIDTH - 115, card_y0 + 150], radius=10, fill=COLOR_INNER_BG, outline=(160, 50, 50), width=1)
+    draw.rounded_rectangle([115, card_y0 + 65, WIDTH - 115, card_y0 + 150], radius=10, fill=COLOR_INNER_BG, outline=COLOR_RED, width=1)
     draw.text((135, card_y0 + 88), "The Mistake: AIModelClient.__init__(self, model_id)", font=FONT_CODE_SM, fill=COLOR_RED)
-    draw.text((135, card_y0 + 120), "Hardcodes class name -> Completely bypasses cooperative MRO chaining!", font=FONT_BODY, fill=COLOR_MUTED)
+    draw.text((135, card_y0 + 120), "Hardcodes class name -> Completely bypasses cooperative MRO chaining!", font=FONT_BODY, fill=COLOR_LIGHT)
 
     # The Clean Solution Box
     draw.rounded_rectangle([115, card_y0 + 165, WIDTH - 115, card_y0 + 260], radius=10, fill=COLOR_INNER_BG, outline=COLOR_GREEN, width=1)
@@ -196,22 +197,22 @@ def make_frame_scene_2(t):
 
     # Bottom Code Block with Dynamic Typewriter (Y: 660 to 1220)
     c2_y0 = 660
-    draw_clean_card(draw, [80, c2_y0, WIDTH - 80, c2_y0 + 560], outline=COLOR_GOLD, width=1)
+    draw_clean_card(draw, [80, c2_y0, WIDTH - 80, c2_y0 + 560], outline=COLOR_GOLD, width=2)
     draw.text((WIDTH // 2, c2_y0 + 36), "Dynamic Runtime Dispatch in Python", font=FONT_HEADING, fill=COLOR_GOLD, anchor="mm")
 
     code_lines = [
         ("class FineTunedClient(AIModelClient):", COLOR_GOLD),
         ("    def __init__(self, model_id, lora_adapter):", COLOR_WHITE),
-        ("        # 1. Cooperative MRO initialization", COLOR_MUTED),
+        ("        # 1. Cooperative MRO initialization", COLOR_LIGHT),
         ("        super().__init__(model_id=model_id)", COLOR_GREEN),
         ("        self.lora_adapter = lora_adapter", COLOR_WHITE),
         ("", COLOR_WHITE),
         ("    def generate(self, prompt: str):", COLOR_GOLD),
-        ("        # 2. Dynamic runtime method extension", COLOR_MUTED),
+        ("        # 2. Dynamic runtime method extension", COLOR_LIGHT),
         ("        raw = super().generate(prompt)", COLOR_CYAN),
         ("        return self.lora_adapter.apply(raw)", COLOR_GOLD),
         ("", COLOR_WHITE),
-        ("# CPython resolves the next class along MRO:", COLOR_MUTED),
+        ("# CPython resolves the next class along MRO:", COLOR_LIGHT),
         ("print(FineTunedClient.mro())", COLOR_WHITE)
     ]
 
@@ -230,7 +231,7 @@ def make_frame_scene_2(t):
 
     for idx, (text, col) in enumerate(code_lines, start=1):
         line_len = len(text)
-        draw.text((115, cur_y), f"{idx:2d}", font=FONT_BODY, fill=COLOR_MUTED)
+        draw.text((115, cur_y), f"{idx:2d}", font=FONT_BODY, fill=COLOR_LIGHT)
         draw.line([150, cur_y - 2, 150, cur_y + 24], fill=COLOR_BORDER, width=1)
 
         if acc + line_len <= shown_chars:
@@ -255,8 +256,8 @@ def make_frame_scene_2(t):
         cur_y += 36
 
     # Bottom Pill
-    draw_clean_card(draw, [80, 1240, WIDTH - 80, 1320], outline=COLOR_GOLD, radius=20, width=1)
-    draw.text((WIDTH // 2, 1280), "super() resolves the NEXT class in instance MRO at runtime", font=FONT_SUB, fill=COLOR_GOLD_LIGHT, anchor="mm")
+    draw_clean_card(draw, [80, 1240, WIDTH - 80, 1320], outline=COLOR_GOLD, radius=20, width=2)
+    draw.text((WIDTH // 2, 1280), "super() resolves the NEXT class in instance MRO at runtime", font=FONT_SUB, fill=COLOR_GOLD, anchor="mm")
 
     return np.array(img)
 
@@ -273,7 +274,7 @@ def make_frame_scene_3(t):
 
     # Center Flowchart Card: Clean Diamond Graph (Y: 345 to 800)
     card_y0 = 345
-    draw_clean_card(draw, [80, card_y0, WIDTH - 80, card_y0 + 455], outline=COLOR_BORDER, width=1)
+    draw_clean_card(draw, [80, card_y0, WIDTH - 80, card_y0 + 455], outline=COLOR_BORDER, width=2)
     draw.text((WIDTH // 2, card_y0 + 34), "The Diamond Inheritance Architecture", font=FONT_HEADING, fill=COLOR_WHITE, anchor="mm")
 
     step = 0
@@ -296,44 +297,43 @@ def make_frame_scene_3(t):
     dx0 = WIDTH // 2 - nw // 2
     dy0 = card_y0 + 295
 
-    # Clean Connecting Lines
+    # Connecting Lines (Thick, clearly visible)
     draw.line([dx0 + nw // 4, dy0, bx0 + nw // 2, by0 + nh], fill=COLOR_BORDER, width=2)
     draw.line([dx0 + 3 * nw // 4, dy0, cx0 + nw // 2, cy0 + nh], fill=COLOR_BORDER, width=2)
     draw.line([bx0 + nw // 2, by0, ax0 + nw // 4, ay0 + nh], fill=COLOR_BORDER, width=2)
     draw.line([cx0 + nw // 2, cy0, ax0 + 3 * nw // 4, ay0 + nh], fill=COLOR_BORDER, width=2)
 
-    # Highlight active lines along resolution path
     if step >= 2:
-        draw.line([dx0 + nw // 4, dy0, bx0 + nw // 2, by0 + nh], fill=COLOR_GOLD, width=2)
+        draw.line([dx0 + nw // 4, dy0, bx0 + nw // 2, by0 + nh], fill=COLOR_GOLD, width=3)
     if step >= 3:
-        draw.line([dx0 + 3 * nw // 4, dy0, cx0 + nw // 2, cy0 + nh], fill=COLOR_GOLD, width=2)
+        draw.line([dx0 + 3 * nw // 4, dy0, cx0 + nw // 2, cy0 + nh], fill=COLOR_GOLD, width=3)
     if step >= 4:
-        draw.line([bx0 + nw // 2, by0, ax0 + nw // 4, ay0 + nh], fill=COLOR_GOLD, width=2)
-        draw.line([cx0 + nw // 2, cy0, ax0 + 3 * nw // 4, ay0 + nh], fill=COLOR_GOLD, width=2)
+        draw.line([bx0 + nw // 2, by0, ax0 + nw // 4, ay0 + nh], fill=COLOR_GOLD, width=3)
+        draw.line([cx0 + nw // 2, cy0, ax0 + 3 * nw // 4, ay0 + nh], fill=COLOR_GOLD, width=3)
 
     def draw_clean_node(x0, y0, title, code, is_active, step_badge=None):
-        fill_col = (28, 26, 32) if is_active else COLOR_INNER_BG
+        fill_col = (35, 28, 40) if is_active else COLOR_INNER_BG
         border_col = COLOR_GOLD if is_active else COLOR_BORDER
-        draw.rounded_rectangle([x0, y0, x0 + nw, y0 + nh], radius=10, fill=fill_col, outline=border_col, width=1)
-        draw.text((x0 + nw // 2, y0 + 22), title, font=FONT_BODY_BD, fill=COLOR_WHITE if is_active else COLOR_MUTED, anchor="mm")
-        draw.text((x0 + nw // 2, y0 + 50), code, font=FONT_CODE_SM, fill=COLOR_GOLD if is_active else (140, 140, 150), anchor="mm")
+        draw.rounded_rectangle([x0, y0, x0 + nw, y0 + nh], radius=10, fill=fill_col, outline=border_col, width=2 if is_active else 1)
+        draw.text((x0 + nw // 2, y0 + 22), title, font=FONT_BODY, fill=COLOR_WHITE if is_active else COLOR_LIGHT, anchor="mm")
+        draw.text((x0 + nw // 2, y0 + 50), code, font=FONT_CODE_SM, fill=COLOR_GOLD if is_active else COLOR_LIGHT, anchor="mm")
         if step_badge and is_active:
-            draw.rounded_rectangle([x0 + nw - 26, y0 - 12, x0 + nw + 26, y0 + 12], radius=6, fill=COLOR_GOLD)
-            draw.text((x0 + nw, y0), step_badge, font=FONT_BADGE, fill=(10, 10, 14), anchor="mm")
+            draw.rounded_rectangle([x0 + nw - 28, y0 - 14, x0 + nw + 28, y0 + 14], radius=8, fill=COLOR_GOLD)
+            draw.text((x0 + nw, y0), step_badge, font=FONT_BADGE, fill=(10, 8, 14), anchor="mm")
 
     draw_clean_node(ax0, ay0, "Class A (Base Root)", "def ping(): 'Root'", step == 4, "4th")
     draw_clean_node(bx0, by0, "Class B (Left)", "super().ping()", step == 2, "2nd")
     draw_clean_node(cx0, cy0, "Class C (Right)", "super().ping()", step == 3, "3rd")
     draw_clean_node(dx0, dy0, "Class D(B, C)", "d = D(); d.ping()", step >= 1, "1st")
 
-    # MRO Resolution Ribbon
+    # MRO Resolution Ribbon (Bright Gold on Black)
     ry0 = card_y0 + 385
-    draw.rounded_rectangle([115, ry0, WIDTH - 115, ry0 + 52], radius=8, fill=COLOR_INNER_BG, outline=COLOR_GOLD, width=1)
-    draw.text((WIDTH // 2, ry0 + 26), "C3 Resolution Order:  D  ->  B  ->  C  ->  A  ->  object", font=FONT_HEADING, fill=COLOR_GOLD_LIGHT, anchor="mm")
+    draw.rounded_rectangle([115, ry0, WIDTH - 115, ry0 + 52], radius=8, fill=COLOR_INNER_BG, outline=COLOR_GOLD, width=2)
+    draw.text((WIDTH // 2, ry0 + 26), "C3 Resolution Order:  D  ->  B  ->  C  ->  A  ->  object", font=FONT_HEADING, fill=COLOR_GOLD, anchor="mm")
 
     # Bottom Mixin Composition Panel (Y: 820 to 1220)
     c2_y0 = 820
-    draw_clean_card(draw, [80, c2_y0, WIDTH - 80, c2_y0 + 400], outline=COLOR_GOLD, width=1)
+    draw_clean_card(draw, [80, c2_y0, WIDTH - 80, c2_y0 + 400], outline=COLOR_GOLD, width=2)
     draw.text((WIDTH // 2, c2_y0 + 34), "The Mixin Architecture Pattern", font=FONT_HEADING, fill=COLOR_GOLD, anchor="mm")
 
     mixins = [
@@ -343,19 +343,19 @@ def make_frame_scene_3(t):
     ]
     my = c2_y0 + 68
     for m_name, m_code in mixins:
-        draw.rounded_rectangle([115, my, WIDTH - 115, my + 64], radius=8, fill=COLOR_INNER_BG, outline=COLOR_BORDER)
-        draw.text((135, my + 16), m_name, font=FONT_BODY_BD, fill=COLOR_WHITE)
-        draw.text((135, my + 42), m_code, font=FONT_CODE_SM, fill=COLOR_MUTED)
+        draw.rounded_rectangle([115, my, WIDTH - 115, my + 64], radius=8, fill=COLOR_INNER_BG, outline=COLOR_BORDER, width=1)
+        draw.text((135, my + 16), m_name, font=FONT_BODY, fill=COLOR_WHITE)
+        draw.text((135, my + 42), m_code, font=FONT_CODE_SM, fill=COLOR_LIGHT)
         my += 74
 
     # Composition AIAgent Box
-    draw.rounded_rectangle([115, my, WIDTH - 115, my + 82], radius=8, fill=(24, 22, 18), outline=COLOR_GOLD, width=1)
+    draw.rounded_rectangle([115, my, WIDTH - 115, my + 82], radius=8, fill=(30, 24, 20), outline=COLOR_GOLD, width=1)
     draw.text((135, my + 16), "class AIAgent(JSONMixin, AuditLoggerMixin, RateLimiterMixin):", font=FONT_CODE_SM, fill=COLOR_GOLD)
     draw.text((135, my + 48), "Composes orthogonal behaviors without deep inheritance hierarchies!", font=FONT_BODY, fill=COLOR_WHITE)
 
     # Bottom Pill
-    draw_clean_card(draw, [80, 1240, WIDTH - 80, 1320], outline=COLOR_GOLD, radius=20, width=1)
-    draw.text((WIDTH // 2, 1280), "C3 Linearization guarantees monotonic, duplicate-free execution", font=FONT_SUB, fill=COLOR_GOLD_LIGHT, anchor="mm")
+    draw_clean_card(draw, [80, 1240, WIDTH - 80, 1320], outline=COLOR_GOLD, radius=20, width=2)
+    draw.text((WIDTH // 2, 1280), "C3 Linearization guarantees monotonic, duplicate-free execution", font=FONT_SUB, fill=COLOR_GOLD, anchor="mm")
 
     return np.array(img)
 
@@ -372,39 +372,39 @@ def make_frame_scene_4(t):
 
     # Top Card: Duck Typing vs ABCs (Y: 345 to 665)
     card_y0 = 345
-    draw_clean_card(draw, [80, card_y0, WIDTH - 80, card_y0 + 320], outline=COLOR_BORDER, width=1)
+    draw_clean_card(draw, [80, card_y0, WIDTH - 80, card_y0 + 320], outline=COLOR_BORDER, width=2)
     draw.text((WIDTH // 2, card_y0 + 34), "Duck Typing vs Abstract Base Classes", font=FONT_HEADING, fill=COLOR_WHITE, anchor="mm")
 
     half_w = (WIDTH - 200 - 24) // 2
     # Left: Duck Typing
-    draw.rounded_rectangle([115, card_y0 + 68, 115 + half_w, card_y0 + 295], radius=10, fill=COLOR_INNER_BG, outline=COLOR_BORDER)
-    draw.text((115 + half_w // 2, card_y0 + 95), "Python Duck Typing", font=FONT_BODY_BD, fill=COLOR_GOLD, anchor="mm")
+    draw.rounded_rectangle([115, card_y0 + 68, 115 + half_w, card_y0 + 295], radius=10, fill=COLOR_INNER_BG, outline=COLOR_BORDER, width=1)
+    draw.text((115 + half_w // 2, card_y0 + 95), "Python Duck Typing", font=FONT_BODY, fill=COLOR_GOLD, anchor="mm")
     draw.text((135, card_y0 + 132), "• 'Walks like a duck, quacks", font=FONT_BODY, fill=COLOR_WHITE)
     draw.text((135, card_y0 + 162), "   like a duck -> It's a duck'", font=FONT_BODY, fill=COLOR_WHITE)
-    draw.text((135, card_y0 + 198), "• Runtime behavior check", font=FONT_BODY, fill=COLOR_MUTED)
+    draw.text((135, card_y0 + 198), "• Runtime behavior check", font=FONT_BODY, fill=COLOR_LIGHT)
     draw.text((135, card_y0 + 228), "• typing.Protocol subtyping", font=FONT_CODE_SM, fill=COLOR_GOLD)
     draw.text((135, card_y0 + 262), "Zero inheritance bloat", font=FONT_SUB, fill=COLOR_GREEN)
 
     # Right: Abstract Base Classes
     rx = 115 + half_w + 24
-    draw.rounded_rectangle([rx, card_y0 + 68, rx + half_w, card_y0 + 295], radius=10, fill=COLOR_INNER_BG, outline=COLOR_BORDER)
-    draw.text((rx + half_w // 2, card_y0 + 95), "Abstract Base Classes", font=FONT_BODY_BD, fill=COLOR_GOLD, anchor="mm")
+    draw.rounded_rectangle([rx, card_y0 + 68, rx + half_w, card_y0 + 295], radius=10, fill=COLOR_INNER_BG, outline=COLOR_BORDER, width=1)
+    draw.text((rx + half_w // 2, card_y0 + 95), "Abstract Base Classes", font=FONT_BODY, fill=COLOR_GOLD, anchor="mm")
     draw.text((rx + 20, card_y0 + 132), "• Enforced contracts via", font=FONT_BODY, fill=COLOR_WHITE)
     draw.text((rx + 20, card_y0 + 162), "   abc.ABC & @abstractmethod", font=FONT_CODE_SM, fill=COLOR_WHITE)
-    draw.text((rx + 20, card_y0 + 198), "• Cannot instantiate incomplete", font=FONT_BODY, fill=COLOR_MUTED)
-    draw.text((rx + 20, card_y0 + 228), "• Raises TypeError on startup", font=FONT_BODY, fill=COLOR_MUTED)
+    draw.text((rx + 20, card_y0 + 198), "• Cannot instantiate incomplete", font=FONT_BODY, fill=COLOR_LIGHT)
+    draw.text((rx + 20, card_y0 + 228), "• Raises TypeError on startup", font=FONT_BODY, fill=COLOR_RED)
     draw.text((rx + 20, card_y0 + 262), "Compile-time safety", font=FONT_SUB, fill=COLOR_CYAN)
 
     # Bottom Pluggable Vector DB Architecture (Y: 685 to 1220)
     c2_y0 = 685
-    draw_clean_card(draw, [80, c2_y0, WIDTH - 80, c2_y0 + 535], outline=COLOR_GOLD, width=1)
+    draw_clean_card(draw, [80, c2_y0, WIDTH - 80, c2_y0 + 535], outline=COLOR_GOLD, width=2)
     draw.text((WIDTH // 2, c2_y0 + 36), "Pluggable Vector Database Architecture", font=FONT_HEADING, fill=COLOR_GOLD, anchor="mm")
 
     # Abstract Base Class Box
     draw.rounded_rectangle([115, c2_y0 + 68, WIDTH - 115, c2_y0 + 175], radius=10, fill=COLOR_INNER_BG, outline=COLOR_GOLD, width=1)
-    draw.text((135, c2_y0 + 92), "class BaseVectorDatabase(abc.ABC):", font=FONT_BODY_BD, fill=COLOR_GOLD)
+    draw.text((135, c2_y0 + 92), "class BaseVectorDatabase(abc.ABC):", font=FONT_BODY, fill=COLOR_GOLD)
     draw.text((135, c2_y0 + 122), "@abstractmethod def upsert(self, doc_id: str, vector: list): ...", font=FONT_CODE_SM, fill=COLOR_WHITE)
-    draw.text((135, c2_y0 + 150), "@abstractmethod def query(self, query_vec: list, top_k: int): ...", font=FONT_CODE_SM, fill=COLOR_MUTED)
+    draw.text((135, c2_y0 + 150), "@abstractmethod def query(self, query_vec: list, top_k: int): ...", font=FONT_CODE_SM, fill=COLOR_LIGHT)
 
     # Dividing connector line
     draw.line([WIDTH // 2, c2_y0 + 175, WIDTH // 2, c2_y0 + 215], fill=COLOR_GOLD, width=2)
@@ -417,34 +417,34 @@ def make_frame_scene_4(t):
     is_pinecone = (int(t * 1.5) % 2 == 0)
 
     # Pinecone Box
-    p_fill = (25, 23, 20) if is_pinecone else COLOR_INNER_BG
-    p_border = COLOR_GOLD if is_pinecone else COLOR_BORDER
-    draw.rounded_rectangle([115, c2_y0 + 240, 115 + ad_w, c2_y0 + 380], radius=10, fill=p_fill, outline=p_border, width=1)
-    draw.text((115 + ad_w // 2, c2_y0 + 268), "PineconeAdapter", font=FONT_BODY_BD, fill=COLOR_GOLD, anchor="mm")
-    draw.text((115 + ad_w // 2, c2_y0 + 302), "Cloud Serverless Vector DB", font=FONT_BODY, fill=COLOR_MUTED, anchor="mm")
+    p_fill = (32, 26, 38) if is_pinecone else COLOR_INNER_BG
+    p_border = COLOR_CYAN if is_pinecone else COLOR_BORDER
+    draw.rounded_rectangle([115, c2_y0 + 240, 115 + ad_w, c2_y0 + 380], radius=10, fill=p_fill, outline=p_border, width=2 if is_pinecone else 1)
+    draw.text((115 + ad_w // 2, c2_y0 + 268), "PineconeAdapter", font=FONT_BODY, fill=COLOR_CYAN, anchor="mm")
+    draw.text((115 + ad_w // 2, c2_y0 + 302), "Cloud Serverless Vector DB", font=FONT_BODY, fill=COLOR_LIGHT, anchor="mm")
     draw.text((115 + ad_w // 2, c2_y0 + 334), "REST API Production Engine", font=FONT_CODE_SM, fill=COLOR_WHITE, anchor="mm")
     draw.text((115 + ad_w // 2, c2_y0 + 360), "100% Contract Satisfied", font=FONT_SUB, fill=COLOR_GREEN, anchor="mm")
 
     # ChromaDB Box
     ch_x = 115 + ad_w + 24
-    c_fill = (25, 23, 20) if not is_pinecone else COLOR_INNER_BG
+    c_fill = (32, 26, 38) if not is_pinecone else COLOR_INNER_BG
     c_border = COLOR_GOLD if not is_pinecone else COLOR_BORDER
-    draw.rounded_rectangle([ch_x, c2_y0 + 240, ch_x + ad_w, c2_y0 + 380], radius=10, fill=c_fill, outline=c_border, width=1)
-    draw.text((ch_x + ad_w // 2, c2_y0 + 268), "ChromaDBAdapter", font=FONT_BODY_BD, fill=COLOR_GOLD, anchor="mm")
-    draw.text((ch_x + ad_w // 2, c2_y0 + 302), "Local In-Memory Vector DB", font=FONT_BODY, fill=COLOR_MUTED, anchor="mm")
+    draw.rounded_rectangle([ch_x, c2_y0 + 240, ch_x + ad_w, c2_y0 + 380], radius=10, fill=c_fill, outline=c_border, width=2 if not is_pinecone else 1)
+    draw.text((ch_x + ad_w // 2, c2_y0 + 268), "ChromaDBAdapter", font=FONT_BODY, fill=COLOR_GOLD, anchor="mm")
+    draw.text((ch_x + ad_w // 2, c2_y0 + 302), "Local In-Memory Vector DB", font=FONT_BODY, fill=COLOR_LIGHT, anchor="mm")
     draw.text((ch_x + ad_w // 2, c2_y0 + 334), "SQLite / DuckDB Storage", font=FONT_CODE_SM, fill=COLOR_WHITE, anchor="mm")
     draw.text((ch_x + ad_w // 2, c2_y0 + 360), "100% Contract Satisfied", font=FONT_SUB, fill=COLOR_GREEN, anchor="mm")
 
     # 1-Line Swappable RAG Pipeline Showcase
     draw.rounded_rectangle([115, c2_y0 + 400, WIDTH - 115, c2_y0 + 510], radius=10, fill=COLOR_INNER_BG, outline=COLOR_GOLD, width=1)
-    draw.text((135, c2_y0 + 424), "1-Line Swappable RAG Pipeline Architecture:", font=FONT_BODY_BD, fill=COLOR_GOLD)
+    draw.text((135, c2_y0 + 424), "1-Line Swappable RAG Pipeline Architecture:", font=FONT_BODY, fill=COLOR_GOLD)
     active_code = "pipeline = RAGPipeline(db=PineconeAdapter())  # Cloud Active" if is_pinecone else "pipeline = RAGPipeline(db=ChromaDBAdapter())  # Local Active"
     draw.text((135, c2_y0 + 458), active_code, font=FONT_CODE_SM, fill=COLOR_WHITE)
-    draw.text((135, c2_y0 + 488), "Decoupled architecture guarantees zero vendor lock-in!", font=FONT_BODY, fill=COLOR_MUTED)
+    draw.text((135, c2_y0 + 488), "Decoupled architecture guarantees zero vendor lock-in!", font=FONT_BODY, fill=COLOR_LIGHT)
 
     # Bottom Pill
-    draw_clean_card(draw, [80, 1240, WIDTH - 80, 1320], outline=COLOR_GOLD, radius=20, width=1)
-    draw.text((WIDTH // 2, 1280), "Guaranteed interfaces prevent runtime bugs before production", font=FONT_SUB, fill=COLOR_GOLD_LIGHT, anchor="mm")
+    draw_clean_card(draw, [80, 1240, WIDTH - 80, 1320], outline=COLOR_GOLD, radius=20, width=2)
+    draw.text((WIDTH // 2, 1280), "Guaranteed interfaces prevent runtime bugs before production", font=FONT_SUB, fill=COLOR_GOLD, anchor="mm")
 
     return np.array(img)
 
@@ -469,7 +469,7 @@ def make_frame_scene_5(t):
 
     # Big Checklist Container (Y: 345 to 940)
     card_y0 = 345
-    draw_clean_card(draw, [80, card_y0, WIDTH - 80, card_y0 + 580], outline=COLOR_GOLD, width=1)
+    draw_clean_card(draw, [80, card_y0, WIDTH - 80, card_y0 + 580], outline=COLOR_GOLD, width=2)
     draw.text((WIDTH // 2, card_y0 + 36), "Day 15 Architect Mastery Milestones", font=FONT_HEADING, fill=COLOR_GOLD, anchor="mm")
 
     p_y = card_y0 + 74
@@ -478,24 +478,24 @@ def make_frame_scene_5(t):
         is_revealed = (t >= reveal_time)
 
         if is_revealed:
-            draw.rounded_rectangle([115, p_y, WIDTH - 115, p_y + 90], radius=10, fill=COLOR_INNER_BG, outline=COLOR_GOLD, width=1)
+            draw.rounded_rectangle([115, p_y, WIDTH - 115, p_y + 90], radius=10, fill=COLOR_INNER_BG, outline=COLOR_GOLD, width=2)
             # Gold Checkmark Box
-            draw.rounded_rectangle([130, p_y + 16, 185, p_y + 74], radius=8, fill=(30, 26, 20), outline=COLOR_GOLD, width=1)
+            draw.rounded_rectangle([130, p_y + 16, 185, p_y + 74], radius=8, fill=(35, 28, 20), outline=COLOR_GOLD, width=1)
             draw.text((158, p_y + 45), "✓", font=FONT_HEADING, fill=COLOR_GOLD, anchor="mm")
             # Text
-            draw.text((205, p_y + 22), title, font=FONT_BODY_BD, fill=COLOR_WHITE)
-            draw.text((205, p_y + 54), desc, font=FONT_BODY, fill=COLOR_MUTED)
+            draw.text((205, p_y + 22), title, font=FONT_BODY, fill=COLOR_WHITE)
+            draw.text((205, p_y + 54), desc, font=FONT_BODY, fill=COLOR_LIGHT)
         else:
             draw.rounded_rectangle([115, p_y, WIDTH - 115, p_y + 90], radius=10, fill=COLOR_INNER_BG, outline=COLOR_BORDER, width=1)
-            draw.rounded_rectangle([130, p_y + 16, 185, p_y + 74], radius=8, fill=(18, 18, 22), outline=COLOR_BORDER, width=1)
-            draw.text((158, p_y + 45), "○", font=FONT_HEADING, fill=COLOR_MUTED, anchor="mm")
-            draw.text((205, p_y + 22), title, font=FONT_BODY_BD, fill=(120, 120, 130))
-            draw.text((205, p_y + 54), desc, font=FONT_BODY, fill=(80, 80, 90))
+            draw.rounded_rectangle([130, p_y + 16, 185, p_y + 74], radius=8, fill=(20, 18, 24), outline=COLOR_BORDER, width=1)
+            draw.text((158, p_y + 45), "○", font=FONT_HEADING, fill=COLOR_LIGHT, anchor="mm")
+            draw.text((205, p_y + 22), title, font=FONT_BODY, fill=COLOR_LIGHT)
+            draw.text((205, p_y + 54), desc, font=FONT_BODY, fill=(160, 160, 180))
         p_y += 98
 
     # Bottom Metric Cards (Y: 950 to 1220)
     c2_y0 = 950
-    draw_clean_card(draw, [80, c2_y0, WIDTH - 80, c2_y0 + 270], outline=COLOR_BORDER, width=1)
+    draw_clean_card(draw, [80, c2_y0, WIDTH - 80, c2_y0 + 270], outline=COLOR_BORDER, width=2)
 
     pct = int(min(100, (t / 5.5) * 100))
     stat_cards = [
@@ -508,13 +508,13 @@ def make_frame_scene_5(t):
     for s_num, s_label, s_sub in stat_cards:
         draw.rounded_rectangle([sx, c2_y0 + 25, sx + sw, c2_y0 + 245], radius=10, fill=COLOR_INNER_BG, outline=COLOR_BORDER, width=1)
         draw.text((sx + sw // 2, c2_y0 + 72), s_num, font=FONT_STAT, fill=COLOR_GOLD, anchor="mm")
-        draw.text((sx + sw // 2, c2_y0 + 140), s_label, font=FONT_BODY_BD, fill=COLOR_WHITE, anchor="mm")
-        draw.text((sx + sw // 2, c2_y0 + 195), s_sub, font=FONT_BODY, fill=COLOR_MUTED, anchor="mm")
+        draw.text((sx + sw // 2, c2_y0 + 140), s_label, font=FONT_BODY, fill=COLOR_WHITE, anchor="mm")
+        draw.text((sx + sw // 2, c2_y0 + 195), s_sub, font=FONT_BODY, fill=COLOR_LIGHT, anchor="mm")
         sx += sw + 20
 
     # Bottom Pill
-    draw_clean_card(draw, [80, 1240, WIDTH - 80, 1320], outline=COLOR_GOLD, radius=20, width=1)
-    draw.text((WIDTH // 2, 1280), "Full code & practice workbook on GitHub - link in bio!", font=FONT_SUB, fill=COLOR_GOLD_LIGHT, anchor="mm")
+    draw_clean_card(draw, [80, 1240, WIDTH - 80, 1320], outline=COLOR_GOLD, radius=20, width=2)
+    draw.text((WIDTH // 2, 1280), "Full code & practice workbook on GitHub - link in bio!", font=FONT_SUB, fill=COLOR_GOLD, anchor="mm")
 
     return np.array(img)
 
@@ -528,7 +528,7 @@ def main():
     os.makedirs(preview_dir, exist_ok=True)
 
     print("=" * 65)
-    print("🎬 Rendering Clean Editorial Times New Roman Reel (40.0s @ 24fps)...")
+    print("🎬 Rendering High-Visibility Bold Times New Roman Reel...")
     print("=" * 65)
 
     # 1. Export High-Resolution Preview Frames
