@@ -143,6 +143,13 @@ This repository documents my daily code, structured notes, logic exercises, and 
 - **04:** Abstract Base Classes & Interfaces: `abc.ABC`, `@abstractmethod`, interface enforcement, instantiation prevention, and pluggable Vector Database architecture (`PineconeAdapter`, `ChromaDBAdapter`)
 - **Workbook:** [`my_practice.py`](./day15/my_practice.py) — 6 Hands-on coding tasks with automated test suite for self-practice
 
+### 📍 [Day 16: Python Data Model & Magic Methods — Operator Overloading, Containers & Callables](./day16)
+- **01:** Object Representation & String Protocols: `__repr__` vs `__str__` duality (`eval(repr(x)) == x`), custom f-string formatting (`__format__`), binary serialization (`__bytes__`), and truth value testing (`__bool__` vs `__len__`)
+- **02:** Operator Overloading & Arithmetic Protocols: Mapping arithmetic symbols (`+`, `-`, `*`, `/`), the `NotImplemented` singleton dispatch rule, reflected operators (`__radd__`, `__rmul__`), in-place mutation (`__iadd__`), matrix multiplication (`@` / `__matmul__`), and `Tensor1D` vector algebra
+- **03:** Rich Comparisons & Hashing Protocols: Full comparisons (`__eq__`, `__lt__`), eliminating boilerplate with `@functools.total_ordering`, the sacred hashability invariant ($a == b \implies \text{hash}(a) == \text{hash}(b)$), and RAG `DocumentChunk` deduplication & ranking
+- **04:** Custom Containers, Sequence Protocols & Callables: Sequence methods (`__len__`, `__getitem__`, `__setitem__`, `__contains__`, `__iter__`), slice object handling (`isinstance(key, slice)`), turning instances into stateful callable functions via `__call__` (PyTorch `nn.Module` foundation), and `PyTorchStyleDataset`
+- **Workbook:** [`my_practice.py`](./day16/my_practice.py) — 6 Hands-on coding tasks with automated test suite for self-practice
+
 ---
 
 ## 🛠️ Tech Stack & Tools
