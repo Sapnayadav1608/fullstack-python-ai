@@ -298,8 +298,15 @@ def make_frame_scene_4(t):
 
 
 # =========================================================================
-# SCENE 5 (32 to 40s): DAY 16 COMPLETE & CTA
+# SCENE 5 (32 to 40s): DAY 16 COMPLETE & CTA (SPACIOUS & ELEGANT)
 # =========================================================================
+TASKS_DONE = [
+    ("4 Deep Python Modules Mastered", "Dunders, operator overloading, @ matmul & protocols"),
+    ("6/6 Practice Tasks Solved", "All automated tests passed in my practice workbook"),
+    ("53% Challenge Milestone Unlocked", "16 days down, 14 more exciting days to go!")
+]
+
+
 def make_frame_scene_5(t):
     prog = np.clip(0.80 + (t / 8.0) * 0.20, 0.80, 1.00)
     img, draw = render_journey_canvas(t, prog, "DAY 16 COMPLETE  •  MILESTONE UNLOCKED")
@@ -309,42 +316,35 @@ def make_frame_scene_5(t):
     draw.text((WIDTH // 2, 390), "Here is everything I accomplished today:", font=FONT_SUB, fill=COLOR_SILVER, anchor="mm")
 
     # Card Title
-    draw.text((WIDTH // 2, 495), "Daily Progress Checklist", font=FONT_CARD_TITLE, fill=COLOR_GOLD, anchor="mm")
+    draw.text((WIDTH // 2, 495), "Today's Achievements & Progress", font=FONT_CARD_TITLE, fill=COLOR_GOLD, anchor="mm")
 
-    TASKS_DONE = [
-        ("String & Repr Protocols", "Mastered __repr__ vs __str__ & custom f-strings"),
-        ("Operator Overloading", "Built Tensor1D with @ matrix multiplication (PEP 465)"),
-        ("The Hashing Contract", "Satisfied a == b => hash(a) == hash(b) invariant"),
-        ("PyTorch Datasets & Callables", "Implemented sequence batch slicing & callable pipeline"),
-        ("Workbook & Automated Tests", "Passed all 6 practice challenges on first run")
-    ]
-
-    # Checklist: 5 items, Height 54px each, gap 12px (535, 601, 667, 733, 799) -> ends at 853!
-    py = 535
+    # 3 Spacious Boxes: Height 95px each, gap 20px (540, 655, 770)
+    py = 540
     for idx, (title, desc) in enumerate(TASKS_DONE):
-        reveal_time = idx * 1.3
+        reveal_time = idx * 1.5
         is_revealed = (t >= reveal_time)
 
         if is_revealed:
-            draw.rounded_rectangle([INNER_X0, py, INNER_X1, py + 54], radius=10, fill=COLOR_INNER_BG, outline=COLOR_GOLD, width=2)
-            draw.rounded_rectangle([INNER_X0 + 15, py + 10, INNER_X0 + 65, py + 44], radius=6, fill=(45, 36, 24), outline=COLOR_GOLD, width=2)
-            draw.text((INNER_X0 + 40, py + 27), "✓", font=FONT_HEADING, fill=COLOR_GOLD, anchor="mm")
-            draw.text((INNER_X0 + 85, py + 12), title, font=FONT_BODY, fill=COLOR_WHITE)
-            draw.text((INNER_X0 + 85, py + 33), desc, font=FONT_DESC, fill=COLOR_SILVER)
+            draw.rounded_rectangle([INNER_X0, py, INNER_X1, py + 95], radius=14, fill=COLOR_INNER_BG, outline=COLOR_GOLD, width=2)
+            # Gold Checkmark Badge
+            draw.rounded_rectangle([INNER_X0 + 18, py + 18, INNER_X0 + 78, py + 78], radius=10, fill=(45, 36, 24), outline=COLOR_GOLD, width=2)
+            draw.text((INNER_X0 + 48, py + 48), "✓", font=FONT_HEADING, fill=COLOR_GOLD, anchor="mm")
+            # Text
+            draw.text((INNER_X0 + 95, py + 22), title, font=FONT_HEADING, fill=COLOR_WHITE)
+            draw.text((INNER_X0 + 95, py + 58), desc, font=FONT_DESC, fill=COLOR_SILVER)
         else:
-            draw.rounded_rectangle([INNER_X0, py, INNER_X1, py + 54], radius=10, fill=COLOR_INNER_BG, outline=COLOR_BORDER, width=1)
-            draw.rounded_rectangle([INNER_X0 + 15, py + 10, INNER_X0 + 65, py + 44], radius=6, fill=(28, 24, 36), outline=COLOR_BORDER, width=1)
-            draw.text((INNER_X0 + 40, py + 27), "○", font=FONT_HEADING, fill=COLOR_SILVER, anchor="mm")
-            draw.text((INNER_X0 + 85, py + 12), title, font=FONT_BODY, fill=COLOR_SILVER)
-            draw.text((INNER_X0 + 85, py + 33), desc, font=FONT_DESC, fill=COLOR_SILVER)
-        py += 66
+            draw.rounded_rectangle([INNER_X0, py, INNER_X1, py + 95], radius=14, fill=COLOR_INNER_BG, outline=COLOR_BORDER, width=2)
+            draw.rounded_rectangle([INNER_X0 + 18, py + 18, INNER_X0 + 78, py + 78], radius=10, fill=(28, 24, 36), outline=COLOR_BORDER, width=1)
+            draw.text((INNER_X0 + 48, py + 48), "○", font=FONT_HEADING, fill=COLOR_SILVER, anchor="mm")
+            draw.text((INNER_X0 + 95, py + 22), title, font=FONT_HEADING, fill=COLOR_SILVER)
+            draw.text((INNER_X0 + 95, py + 58), desc, font=FONT_DESC, fill=COLOR_SILVER)
+        py += 115
 
-    # Milestone Box: Y = 880 to 1020 (Height 140px, perfectly aligned inside card!)
+    # Milestone Box: Y = 890 to 1010 (Height: 120px, Symmetrical 40px gaps!)
     pct = int(min(53, 50 + (t / 5.5) * 3))
-    draw.rounded_rectangle([INNER_X0, 880, INNER_X1, 1020], radius=18, fill=COLOR_INNER_BG, outline=COLOR_GOLD, width=2)
-    draw.text((WIDTH // 2, 915), f"CHALLENGE PROGRESS: {pct}% / 100%", font=FONT_CARD_TITLE, fill=COLOR_GOLD, anchor="mm")
-    draw.text((WIDTH // 2, 955), "Follow along my 30-Day Python + AI Journey!", font=FONT_BODY, fill=COLOR_WHITE, anchor="mm")
-    draw.text((WIDTH // 2, 990), "Day 17 Tomorrow! ⭐ Full code on GitHub (Link in bio)", font=FONT_BODY, fill=COLOR_GOLD, anchor="mm")
+    draw.rounded_rectangle([INNER_X0, 890, INNER_X1, 1010], radius=18, fill=COLOR_INNER_BG, outline=COLOR_GOLD, width=2)
+    draw.text((WIDTH // 2, 930), f"CHALLENGE PROGRESS: {pct}% / 100%", font=FONT_CARD_TITLE, fill=COLOR_GOLD, anchor="mm")
+    draw.text((WIDTH // 2, 975), "Follow along my 30-Day Python + AI Journey! Day 17 tomorrow!", font=FONT_BODY, fill=COLOR_WHITE, anchor="mm")
 
     # Bottom Pill Text
     draw.text((WIDTH // 2, 1120), "⭐ Full code on my GitHub repository. Link in bio!", font=FONT_HEADING, fill=COLOR_GOLD, anchor="mm")
