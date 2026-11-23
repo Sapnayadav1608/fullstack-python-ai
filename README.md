@@ -150,6 +150,13 @@ This repository documents my daily code, structured notes, logic exercises, and 
 - **04:** Custom Containers, Sequence Protocols & Callables: Sequence methods (`__len__`, `__getitem__`, `__setitem__`, `__contains__`, `__iter__`), slice object handling (`isinstance(key, slice)`), turning instances into stateful callable functions via `__call__` (PyTorch `nn.Module` foundation), and `PyTorchStyleDataset`
 - **Workbook:** [`my_practice.py`](./day16/my_practice.py) — 6 Hands-on coding tasks with automated test suite for self-practice
 
+### 📍 [Day 17: Advanced Exception Handling, Custom Exception Hierarchies & Defensive AI Engineering](./day17)
+- **01:** Exception Architecture & Lifecycle: CPython hierarchy (`BaseException` vs `Exception`), danger of bare `except: pass`, the complete 4-clause lifecycle (`try/except/else/finally`), why `else` prevents false positives, and `SafeModelCallWrapper` enterprise pattern
+- **02:** Chaining, Context & Traceback Engineering: PEP 3134 mechanics, implicit context (`__context__`), explicit chaining (`raise ... from err`), context suppression (`raise ... from None`) for API security, programmatic root-cause resolver, and Resilient AI Gateway telemetry
+- **03:** Custom Exception Hierarchies for AI: Enterprise taxonomy (`AIPlatformError` -> `AIClientError` [4xx] vs `AIServerError` [5xx]), `TokenLimitExceededError` with token counts, `RateLimitExceededError` with backoff hints, RFC 7807 problem details serialization, and dynamic HTTP factory
+- **04:** Exception Groups & Resilient Architectures: Python 3.11+ `ExceptionGroup` and selective `except*` pattern matching for concurrent agent tools, Resilient Circuit Breaker state machine (Closed -> Open -> Half-Open), and Multi-Provider Fallback Router (Pro -> Flash -> Cache)
+- **Workbook:** [`my_practice.py`](./day17/my_practice.py) — 6 Hands-on coding tasks with automated test suite for self-practice
+
 ---
 
 ## 🛠️ Tech Stack & Tools
