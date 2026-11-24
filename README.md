@@ -157,6 +157,13 @@ This repository documents my daily code, structured notes, logic exercises, and 
 - **04:** Exception Groups & Resilient Architectures: Python 3.11+ `ExceptionGroup` and selective `except*` pattern matching for concurrent agent tools, Resilient Circuit Breaker state machine (Closed -> Open -> Half-Open), and Multi-Provider Fallback Router (Pro -> Flash -> Cache)
 - **Workbook:** [`my_practice.py`](./day17/my_practice.py) — 6 Hands-on coding tasks with automated test suite for self-practice
 
+### 📍 [Day 18: File Systems, Serialization, JSONL & Streaming Large-Scale AI Datasets](./day18)
+- **01:** Modern File Systems & Pathlib: Object-oriented paths (`pathlib.Path`), operator overloading (`/`), pure vs concrete paths, path traversal security, recursive `.rglob()`, and `ModelArtifactManager`
+- **02:** Streams, Encodings & Buffer Internals: Open modes (`x` exclusive creation), UTF-8 vs UTF-8-SIG (BOM trap), replacement decoding, CPython 8KB buffer vs `os.fsync()`, and crash-proof atomic file write pattern
+- **03:** Serialization Protocols & Pickle Vulnerabilities: Custom `JSONEncoder` (datetime, UUID, dataclass, sets), JSON Lines (`.jsonl`) for 100GB LLM datasets, the deadly Pickle `__reduce__` RCE exploit, and why AI moved to `safetensors`
+- **04:** Large-Scale Streaming & Memory-Mapped I/O: $O(1)$ memory chunked generators, `mmap` zero-copy virtual memory slicing, in-place byte editing, and `StreamingTokenBatcher` for continuous LLM training
+- **Workbook:** [`my_practice.py`](./day18/my_practice.py) — 6 Hands-on coding tasks with automated test suite for self-practice
+
 ---
 
 ## 🛠️ Tech Stack & Tools
