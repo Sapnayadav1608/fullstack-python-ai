@@ -1,23 +1,29 @@
 """
-Day 18: Personal Journey Daily Vlog Reel Generator (Unified Mathematical Grid Edition)
-======================================================================================
+Day 18: Personal Journey Daily Vlog Reel Generator (Sophisticated Motion Edition)
+==================================================================================
 30-Day Full Stack Python + AI Engineering Challenge
 
 Theme: "Day 18/30: What I Learned & Built Today!" (Personal Learning Journey)
        File Systems, Serialization, JSONL & Streaming Large-Scale AI Datasets
 
-Unified Mathematical Grid Architecture (100% Symmetrical Spacing & Zero Overflow):
+Aesthetic:
+  - 100% Minimalist, Premium Luxury Engineering (Apple / Linear / Vercel style)
+  - Zero Neon Colors (Refined Champagne Gold, Platinum White, Slate Silver, Deep Matte Obsidian)
+  - Smooth Kinetic Staggered Card Entrances (ease-out cubic cascade)
+  - Live Animated Memory Efficiency Gauge in Scene 4
+  - Pure Silent Video: audio=False
+
+Unified Mathematical Grid Architecture:
   - Top Badge:           Y = 160 to 220 (Height: 60px, Radius: 18)
   - Hero Line 1:         Y = 265 (56px Bold White, anchor="mm")
   - Hero Line 2:         Y = 330 (56px Bold Gold, anchor="mm")
   - Subtitle:            Y = 390 (28px Italic Silver, anchor="mm")
   - Main Card:           Y = 450 to 1050 (Exact 600px Height, Left 60, Right 1020, Radius: 24)
   - Card Title:          Y = 495 (38px Bold Gold, anchor="mm")
-  - Card Content:        Y = 535 to 1020 (Available 485px, Symmetrical padding)
+  - Card Content:        Y = 540 to 1020 (Available 480px)
   - Bottom Callout Pill: Y = 1080 to 1160 (Exact 80px Height, Left 60, Right 1020, Radius: 22)
   - Animated Progress:   Y = 1200 to 1210 (Clean 10px Bar, Left 80, Right 1000)
   - Safe UI Zone:        Y = 1210 to 1920 (710px completely clear for Instagram/YouTube UI)
-  - Pure Silent Video:   audio=False
 """
 
 import os
@@ -42,25 +48,30 @@ FONT_BODY = ImageFont.truetype("C:/Windows/Fonts/timesbd.ttf", 26)
 FONT_DESC = ImageFont.truetype("C:/Windows/Fonts/timesbd.ttf", 23)
 FONT_BADGE = ImageFont.truetype("C:/Windows/Fonts/timesbd.ttf", 24)
 FONT_CODE = ImageFont.truetype("C:/Windows/Fonts/consolab.ttf", 25)
-FONT_BIG_MATH = ImageFont.truetype("C:/Windows/Fonts/timesbd.ttf", 40)
+FONT_BIG_STAT = ImageFont.truetype("C:/Windows/Fonts/timesbd.ttf", 34)
 
-# High-Contrast Luxury Palette
-COLOR_BG_DARK = np.array([8, 8, 12], dtype=np.float32)      # Deep Obsidian
-COLOR_CARD_BG = (22, 20, 30, 255)                          # High Contrast Glass Card
-COLOR_INNER_BG = (14, 12, 18, 255)                         # Deep Pitch Box
+# Refined Minimalist Palette (Zero Neon — Luxury Dark Mode)
+COLOR_BG_DARK = np.array([10, 10, 14], dtype=np.float32)     # Deep Matte Obsidian
+COLOR_CARD_BG = (20, 20, 28, 255)                            # Premium Frosted Glass Card
+COLOR_INNER_BG = (14, 14, 20, 255)                           # Deep Pitch Box
 
-COLOR_WHITE = (255, 255, 255)          # 100% Pure White
-COLOR_LIGHT = (226, 232, 240)          # Light Platinum
-COLOR_SILVER = (203, 213, 225)         # Bright Silver (#CBD5E1)
-COLOR_GOLD = (255, 215, 0)             # Radiant Vivid Gold
-COLOR_GREEN = (52, 211, 153)           # Neon Emerald
-COLOR_CYAN = (56, 189, 248)            # Vivid Electric Cyan
-COLOR_BORDER = (80, 72, 100)           # High Visibility Crisp Border
+COLOR_WHITE = (255, 255, 255)          # 100% Pure Crisp White
+COLOR_LIGHT = (230, 235, 242)          # Platinum White
+COLOR_SILVER = (160, 165, 180)         # Refined Slate Silver (#A0A5B4)
+COLOR_GOLD = (245, 200, 66)            # Warm Champagne Gold / Amber (#F5C842)
+COLOR_BORDER = (65, 60, 78)            # Crisp Subtle Matte Border
+COLOR_RED_MUTED = (220, 95, 95)        # Muted Warning Red (for OOM benchmark)
 
 # Standardized Global Geometry Constants
 CARD_X0, CARD_X1 = 60, WIDTH - 60      # Left 60, Right 1020 (Width: 960px)
 CARD_Y0, CARD_Y1 = 450, 1050           # Top 450, Bottom 1050 (Height: 600px)
 INNER_X0, INNER_X1 = 90, WIDTH - 90    # Left 90, Right 990 (Width: 900px)
+
+
+def ease_out_cubic(x: float) -> float:
+    """Natural, smooth deceleration curve (Apple / iOS style)."""
+    x = max(0.0, min(1.0, x))
+    return 1.0 - (1.0 - x) ** 3
 
 
 def create_base_canvas():
@@ -76,17 +87,17 @@ def render_journey_canvas(t, scene_progress, step_badge="DAY 18 / 30  •  MY PY
     # 1. Top Eyebrow Badge (Y: 160 to 220)
     badge_w = 580
     bx0 = (WIDTH - badge_w) // 2
-    draw.rounded_rectangle([bx0, 160, bx0 + badge_w, 220], radius=18, fill=(32, 28, 42), outline=COLOR_GOLD, width=1)
+    draw.rounded_rectangle([bx0, 160, bx0 + badge_w, 220], radius=18, fill=(28, 26, 36), outline=COLOR_GOLD, width=1)
     draw.text((WIDTH // 2, 190), step_badge, font=FONT_BADGE, fill=COLOR_GOLD, anchor="mm")
 
-    # 2. Main Card Shell (Y: 450 to 1050) — IDENTICAL ON ALL SCENES!
+    # 2. Main Card Shell (Y: 450 to 1050)
     draw.rounded_rectangle([CARD_X0, CARD_Y0, CARD_X1, CARD_Y1], radius=24, fill=COLOR_CARD_BG, outline=COLOR_GOLD, width=2)
 
-    # 3. Bottom Callout Pill (Y: 1080 to 1160) — IDENTICAL ON ALL SCENES!
-    draw.rounded_rectangle([CARD_X0, 1080, CARD_X1, 1160], radius=22, fill=(28, 24, 36), outline=COLOR_GOLD, width=2)
+    # 3. Bottom Callout Pill (Y: 1080 to 1160)
+    draw.rounded_rectangle([CARD_X0, 1080, CARD_X1, 1160], radius=22, fill=(26, 24, 34), outline=COLOR_GOLD, width=2)
 
-    # 4. Animated Progress Bar (Y: 1200 to 1210) — IDENTICAL ON ALL SCENES!
-    draw.rounded_rectangle([80, 1200, WIDTH - 80, 1210], radius=5, fill=(40, 36, 52))
+    # 4. Animated Progress Bar (Y: 1200 to 1210)
+    draw.rounded_rectangle([80, 1200, WIDTH - 80, 1210], radius=5, fill=(36, 34, 46))
     fill_w = int((WIDTH - 160) * scene_progress)
     if fill_w > 0:
         draw.rounded_rectangle([80, 1200, 80 + fill_w, 1210], radius=5, fill=COLOR_GOLD)
@@ -95,13 +106,13 @@ def render_journey_canvas(t, scene_progress, step_badge="DAY 18 / 30  •  MY PY
 
 
 # =========================================================================
-# SCENE 1 (0 to 8s): JOURNEY HOOK
+# SCENE 1 (0 to 8s): JOURNEY HOOK (STAGGERED SMOOTH CASCADE)
 # =========================================================================
 def make_frame_scene_1(t):
     prog = np.clip((t / 8.0) * 0.20, 0.0, 0.20)
     img, draw = render_journey_canvas(t, prog, "DAY 18 / 30  •  MY PYTHON + AI JOURNEY")
 
-    # Header (Even vertical spacing: 265, 330, 390)
+    # Header (Even vertical rhythm)
     draw.text((WIDTH // 2, 265), "Day 18 of 30 Days", font=FONT_HERO, fill=COLOR_WHITE, anchor="mm")
     draw.text((WIDTH // 2, 330), "Python + AI Engineering!", font=FONT_HERO, fill=COLOR_GOLD, anchor="mm")
     draw.text((WIDTH // 2, 390), "File Systems, JSONL & Large Dataset Streaming", font=FONT_SUB, fill=COLOR_SILVER, anchor="mm")
@@ -116,17 +127,25 @@ def make_frame_scene_1(t):
         ("04", "Zero-Copy mmap & Token Streams", "Memory-mapped files & high-throughput batching")
     ]
 
-    # 4 Boxes: Height 100px each, gap 24px (540, 664, 788, 912) -> ends at 1012 (38px bottom gap!)
-    py = 540
-    for num, title, desc in modules:
-        draw.rounded_rectangle([INNER_X0, py, INNER_X1, py + 100], radius=14, fill=COLOR_INNER_BG, outline=COLOR_BORDER, width=2)
-        # Gold Tag
-        draw.rounded_rectangle([INNER_X0 + 20, py + 16, INNER_X0 + 85, py + 84], radius=10, fill=(45, 36, 24), outline=COLOR_GOLD, width=2)
-        draw.text((INNER_X0 + 52, py + 50), num, font=FONT_HEADING, fill=COLOR_GOLD, anchor="mm")
-        # Text
-        draw.text((INNER_X0 + 115, py + 20), title, font=FONT_HEADING, fill=COLOR_WHITE)
-        draw.text((INNER_X0 + 115, py + 56), desc, font=FONT_DESC, fill=COLOR_SILVER)
-        py += 124
+    # Staggered Kinetic Slide-In (Cards smoothly settle into place)
+    base_py = 540
+    for idx, (num, title, desc) in enumerate(modules):
+        # Stagger start by 0.12s per card over 0.35s duration
+        start_t = 0.2 + idx * 0.15
+        progress = ease_out_cubic((t - start_t) / 0.4)
+
+        # Slide upward from +25px
+        y_offset = int(25 * (1.0 - progress))
+        py = base_py + idx * 124 + y_offset
+
+        if progress > 0.01:
+            draw.rounded_rectangle([INNER_X0, py, INNER_X1, py + 100], radius=14, fill=COLOR_INNER_BG, outline=COLOR_BORDER, width=2)
+            # Gold Tag
+            draw.rounded_rectangle([INNER_X0 + 20, py + 16, INNER_X0 + 85, py + 84], radius=10, fill=(40, 34, 22), outline=COLOR_GOLD, width=1)
+            draw.text((INNER_X0 + 52, py + 50), num, font=FONT_HEADING, fill=COLOR_GOLD, anchor="mm")
+            # Text
+            draw.text((INNER_X0 + 115, py + 20), title, font=FONT_HEADING, fill=COLOR_WHITE)
+            draw.text((INNER_X0 + 115, py + 56), desc, font=FONT_DESC, fill=COLOR_SILVER)
 
     # Bottom Pill Text
     draw.text((WIDTH // 2, 1120), "👉 Come along with me on Day 18!", font=FONT_HEADING, fill=COLOR_GOLD, anchor="mm")
@@ -155,12 +174,12 @@ def make_frame_scene_2(t):
         ("def atomic_write(filepath, content):", COLOR_GOLD),
         ("    target = Path(filepath).resolve()", COLOR_WHITE),
         ("    temp = target.with_name(f\".{target.name}.tmp\")", COLOR_LIGHT),
-        ("    # 1. Write and force flush to physical disk:", COLOR_GREEN),
+        ("    # 1. Write and force flush to physical disk:", COLOR_SILVER),
         ("    with open(temp, \"w\", encoding=\"utf-8\") as f:", COLOR_WHITE),
-        ("        f.write(content)", COLOR_CYAN),
-        ("        f.flush()", COLOR_GOLD),
-        ("        os.fsync(f.fileno())  # Hardware sync!", COLOR_GREEN),
-        ("    # 2. Atomic rename replaces old file safely:", COLOR_LIGHT),
+        ("        f.write(content)", COLOR_GOLD),
+        ("        f.flush()", COLOR_LIGHT),
+        ("        os.fsync(f.fileno())  # Hardware sync!", COLOR_GOLD),
+        ("    # 2. Atomic rename replaces old file safely:", COLOR_SILVER),
         ("    os.replace(temp, target)", COLOR_GOLD)
     ]
 
@@ -210,7 +229,7 @@ def make_frame_scene_2(t):
 
 
 # =========================================================================
-# SCENE 3 (16 to 24s): STEP 2 - JSONL for LLMs & Pickle Vulnerabilities
+# SCENE 3 (16 to 24s): STEP 2 - JSONL & The Pickle RCE Exploit
 # =========================================================================
 def make_frame_scene_3(t):
     prog = np.clip(0.40 + (t / 8.0) * 0.20, 0.40, 0.60)
@@ -223,8 +242,8 @@ def make_frame_scene_3(t):
     # Card Title
     draw.text((WIDTH // 2, 495), "Data Serialization Architecture", font=FONT_CARD_TITLE, fill=COLOR_GOLD, anchor="mm")
 
-    # Base Root Box: Y = 540 to 630 (Height: 90px)
-    draw.rounded_rectangle([INNER_X0, 540, INNER_X1, 630], radius=16, fill=COLOR_INNER_BG, outline=COLOR_GOLD, width=3)
+    # Base Header Box: Y = 540 to 630 (Height: 90px)
+    draw.rounded_rectangle([INNER_X0, 540, INNER_X1, 630], radius=16, fill=COLOR_INNER_BG, outline=COLOR_GOLD, width=2)
     draw.text((WIDTH // 2, 570), "JSONL: 1 JSON Object Per Line", font=FONT_CODE, fill=COLOR_GOLD, anchor="mm")
     draw.text((WIDTH // 2, 602), "Streams 100GB fine-tuning datasets with O(1) constant RAM!", font=FONT_DESC, fill=COLOR_SILVER, anchor="mm")
 
@@ -234,16 +253,20 @@ def make_frame_scene_3(t):
         ("Safetensors", "Zero-copy, non-executable model weights standard")
     ]
 
-    # 3 Cards: Height 100px each, gap 30px (660, 790, 920) -> ends at 1020 (Exact 30px bottom gap!)
-    py = 660
-    for tag, desc in cards:
-        draw.rounded_rectangle([INNER_X0, py, INNER_X1, py + 100], radius=14, fill=COLOR_INNER_BG, outline=COLOR_BORDER, width=2)
-        # Tag
-        draw.rounded_rectangle([INNER_X0 + 20, py + 16, INNER_X0 + 210, py + 84], radius=10, fill=(45, 36, 24), outline=COLOR_GOLD, width=2)
-        draw.text((INNER_X0 + 115, py + 50), tag, font=FONT_HEADING, fill=COLOR_GOLD, anchor="mm")
-        # Text
-        draw.text((INNER_X0 + 230, py + 50), desc, font=FONT_DESC, fill=COLOR_WHITE, anchor="lm")
-        py += 130
+    base_py = 660
+    for idx, (tag, desc) in enumerate(cards):
+        start_t = 0.2 + idx * 0.18
+        progress = ease_out_cubic((t - start_t) / 0.4)
+        y_offset = int(20 * (1.0 - progress))
+        py = base_py + idx * 130 + y_offset
+
+        if progress > 0.01:
+            draw.rounded_rectangle([INNER_X0, py, INNER_X1, py + 100], radius=14, fill=COLOR_INNER_BG, outline=COLOR_BORDER, width=2)
+            # Gold Tag
+            draw.rounded_rectangle([INNER_X0 + 20, py + 16, INNER_X0 + 210, py + 84], radius=10, fill=(40, 34, 22), outline=COLOR_GOLD, width=1)
+            draw.text((INNER_X0 + 115, py + 50), tag, font=FONT_HEADING, fill=COLOR_GOLD, anchor="mm")
+            # Text
+            draw.text((INNER_X0 + 230, py + 50), desc, font=FONT_DESC, fill=COLOR_WHITE, anchor="lm")
 
     # Bottom Pill Text
     draw.text((WIDTH // 2, 1120), "🔒 NEVER use pickle.loads() on untrusted AI model files!", font=FONT_HEADING, fill=COLOR_GOLD, anchor="mm")
@@ -252,7 +275,7 @@ def make_frame_scene_3(t):
 
 
 # =========================================================================
-# SCENE 4 (24 to 32s): STEP 3 - Zero-Copy mmap & Large-Scale Streaming
+# SCENE 4 (24 to 32s): STEP 3 - LIVE ANIMATED MEMORY BENCHMARK (ZERO NEON)
 # =========================================================================
 def make_frame_scene_4(t):
     prog = np.clip(0.60 + (t / 8.0) * 0.20, 0.60, 0.80)
@@ -263,34 +286,40 @@ def make_frame_scene_4(t):
     draw.text((WIDTH // 2, 390), "Mapping disk pages directly into virtual memory address space.", font=FONT_SUB, fill=COLOR_SILVER, anchor="mm")
 
     # Card Title
-    draw.text((WIDTH // 2, 495), "Large-Scale AI Data Pipeline", font=FONT_CARD_TITLE, fill=COLOR_GOLD, anchor="mm")
+    draw.text((WIDTH // 2, 495), "10 GB Dataset Memory Benchmark", font=FONT_CARD_TITLE, fill=COLOR_GOLD, anchor="mm")
 
-    protocols = [
-        (
-            "1. Chunked Buffer Streamer",
-            "stream_chunks(file, chunk_size=64KB)",
-            "Processes files larger than physical RAM with O(1) memory!"
-        ),
-        (
-            "2. Zero-Copy mmap Protocol",
-            "mmap.mmap(fileno, length=0)",
-            "Instant binary pattern search & slicing without copying to RAM!"
-        ),
-        (
-            "3. StreamingTokenBatcher",
-            "Continuous micro-batch generator",
-            "Feeds millions of tokens to PyTorch models without OOM crashes!"
-        )
-    ]
+    # Smooth animation progress for the benchmark bars
+    bench_prog = ease_out_cubic(t / 3.0)
 
-    # 3 Cards: Height 135px each, gap 20px (545, 700, 855) -> ends at 990 (60px bottom gap!)
-    py = 545
-    for title, sig, desc in protocols:
-        draw.rounded_rectangle([INNER_X0, py, INNER_X1, py + 135], radius=16, fill=COLOR_INNER_BG, outline=COLOR_BORDER, width=2)
-        draw.text((INNER_X0 + 30, py + 22), title, font=FONT_HEADING, fill=COLOR_GOLD)
-        draw.text((INNER_X0 + 30, py + 62), sig, font=FONT_CODE, fill=COLOR_CYAN)
-        draw.text((INNER_X0 + 30, py + 100), desc, font=FONT_DESC, fill=COLOR_WHITE)
-        py += 155
+    # Box 1: Standard f.read() (10,240 MB - RAM Crash)
+    py1 = 545
+    draw.rounded_rectangle([INNER_X0, py1, INNER_X1, py1 + 135], radius=16, fill=COLOR_INNER_BG, outline=COLOR_BORDER, width=2)
+    draw.text((INNER_X0 + 30, py1 + 22), "Standard f.read() / f.readlines()", font=FONT_HEADING, fill=COLOR_WHITE)
+    draw.text((INNER_X1 - 30, py1 + 22), "10,240 MB (OOM Crash!)", font=FONT_BODY, fill=COLOR_RED_MUTED, anchor="ra")
+    # Red Warning Bar
+    draw.rounded_rectangle([INNER_X0 + 30, py1 + 65, INNER_X1 - 30, py1 + 85], radius=6, fill=(36, 32, 40))
+    bar1_w = int((INNER_X1 - INNER_X0 - 60) * bench_prog)
+    if bar1_w > 0:
+        draw.rounded_rectangle([INNER_X0 + 30, py1 + 65, INNER_X0 + 30 + bar1_w, py1 + 85], radius=6, fill=COLOR_RED_MUTED)
+    draw.text((INNER_X0 + 30, py1 + 102), "Allocates entire 10GB into Python heap -> Crashes container!", font=FONT_DESC, fill=COLOR_SILVER)
+
+    # Box 2: Zero-Copy mmap / Chunked Streaming (15 MB Constant)
+    py2 = 700
+    draw.rounded_rectangle([INNER_X0, py2, INNER_X1, py2 + 135], radius=16, fill=COLOR_INNER_BG, outline=COLOR_GOLD, width=2)
+    draw.text((INNER_X0 + 30, py2 + 22), "Zero-Copy mmap & Streaming", font=FONT_HEADING, fill=COLOR_GOLD)
+    draw.text((INNER_X1 - 30, py2 + 22), "15 MB (99.8% Less RAM!)", font=FONT_BODY, fill=COLOR_GOLD, anchor="ra")
+    # Gold Efficiency Bar (Only tiny fraction of width)
+    draw.rounded_rectangle([INNER_X0 + 30, py2 + 65, INNER_X1 - 30, py2 + 85], radius=6, fill=(36, 32, 40))
+    bar2_w = max(18, int((INNER_X1 - INNER_X0 - 60) * 0.02 * bench_prog))
+    draw.rounded_rectangle([INNER_X0 + 30, py2 + 65, INNER_X0 + 30 + bar2_w, py2 + 85], radius=6, fill=COLOR_GOLD)
+    draw.text((INNER_X0 + 30, py2 + 102), "Maps disk pages to virtual memory -> Blazing fast O(1) RAM!", font=FONT_DESC, fill=COLOR_WHITE)
+
+    # Box 3: Enterprise Takeaway
+    py3 = 855
+    draw.rounded_rectangle([INNER_X0, py3, INNER_X1, py3 + 135], radius=16, fill=COLOR_INNER_BG, outline=COLOR_BORDER, width=2)
+    draw.text((INNER_X0 + 30, py3 + 22), "Architecture Takeaway", font=FONT_HEADING, fill=COLOR_WHITE)
+    draw.text((INNER_X0 + 30, py3 + 62), "StreamingTokenBatcher Protocol", font=FONT_CODE, fill=COLOR_GOLD)
+    draw.text((INNER_X0 + 30, py3 + 100), "Feeds continuous mini-batches to PyTorch without memory leaks.", font=FONT_DESC, fill=COLOR_SILVER)
 
     # Bottom Pill Text
     draw.text((WIDTH // 2, 1120), "🧠 Zero-copy mmap powers modern high-speed AI data loaders!", font=FONT_HEADING, fill=COLOR_GOLD, anchor="mm")
@@ -328,14 +357,14 @@ def make_frame_scene_5(t):
         if is_revealed:
             draw.rounded_rectangle([INNER_X0, py, INNER_X1, py + 95], radius=14, fill=COLOR_INNER_BG, outline=COLOR_GOLD, width=2)
             # Gold Checkmark Badge
-            draw.rounded_rectangle([INNER_X0 + 18, py + 18, INNER_X0 + 78, py + 78], radius=10, fill=(45, 36, 24), outline=COLOR_GOLD, width=2)
+            draw.rounded_rectangle([INNER_X0 + 18, py + 18, INNER_X0 + 78, py + 78], radius=10, fill=(40, 34, 22), outline=COLOR_GOLD, width=1)
             draw.text((INNER_X0 + 48, py + 48), "✓", font=FONT_HEADING, fill=COLOR_GOLD, anchor="mm")
             # Text
             draw.text((INNER_X0 + 95, py + 22), title, font=FONT_HEADING, fill=COLOR_WHITE)
             draw.text((INNER_X0 + 95, py + 58), desc, font=FONT_DESC, fill=COLOR_SILVER)
         else:
             draw.rounded_rectangle([INNER_X0, py, INNER_X1, py + 95], radius=14, fill=COLOR_INNER_BG, outline=COLOR_BORDER, width=2)
-            draw.rounded_rectangle([INNER_X0 + 18, py + 18, INNER_X0 + 78, py + 78], radius=10, fill=(28, 24, 36), outline=COLOR_BORDER, width=1)
+            draw.rounded_rectangle([INNER_X0 + 18, py + 18, INNER_X0 + 78, py + 78], radius=10, fill=(26, 24, 32), outline=COLOR_BORDER, width=1)
             draw.text((INNER_X0 + 48, py + 48), "○", font=FONT_HEADING, fill=COLOR_SILVER, anchor="mm")
             draw.text((INNER_X0 + 95, py + 22), title, font=FONT_HEADING, fill=COLOR_SILVER)
             draw.text((INNER_X0 + 95, py + 58), desc, font=FONT_DESC, fill=COLOR_SILVER)
@@ -362,7 +391,7 @@ def main():
     os.makedirs(preview_dir, exist_ok=True)
 
     print("=" * 65)
-    print("🎬 Rendering Unified Grid Silent Day 18 Vlog Reel...")
+    print("🎬 Rendering Sophisticated Motion Silent Day 18 Vlog Reel...")
     print("=" * 65)
 
     print("📸 Exporting 5 High-Resolution Preview Frames...")
