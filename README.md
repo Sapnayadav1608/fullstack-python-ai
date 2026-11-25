@@ -164,6 +164,13 @@ This repository documents my daily code, structured notes, logic exercises, and 
 - **04:** Large-Scale Streaming & Memory-Mapped I/O: $O(1)$ memory chunked generators, `mmap` zero-copy virtual memory slicing, in-place byte editing, and `StreamingTokenBatcher` for continuous LLM training
 - **Workbook:** [`my_practice.py`](./day18/my_practice.py) — 6 Hands-on coding tasks with automated test suite for self-practice
 
+### 📍 [Day 19: Modern Type Systems, Dataclasses, Pydantic V2 & Client Architecture](./day19)
+- **01:** Modern Type Hints, Generics & Protocols: PEP 544 structural subtyping (`typing.Protocol`), `@runtime_checkable`, `Generic[T]`, and modeling `IAudioStreamable` for client audio streaming
+- **02:** Dataclasses & Immutability Patterns: Slotted dataclasses (`slots=True`), `frozen=True` immutable value objects, `__post_init__` domain invariants, and `ClientProposal` modeling for Mindifestation
+- **03:** Pydantic V2 & Production API Validation: Rust-powered `pydantic-core`, `@field_validator`, cross-field `@model_validator(mode="after")`, and live Razorpay payment webhook parsing
+- **04:** Generic Repositories & Clean Architecture: Decoupling domain logic from persistence via `IRepository[T, ID]`, In-Memory vs JSON stores, and `MeditationSanctuaryService` business layer
+- **Workbook:** [`my_practice.py`](./day19/my_practice.py) — 6 Hands-on coding tasks with automated test suite for self-practice
+
 ---
 
 ## 🛠️ Tech Stack & Tools
