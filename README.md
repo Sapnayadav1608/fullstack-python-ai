@@ -171,6 +171,13 @@ This repository documents my daily code, structured notes, logic exercises, and 
 - **04:** Generic Repositories & Clean Architecture: Decoupling domain logic from persistence via `IRepository[T, ID]`, In-Memory vs JSON stores, and `MeditationSanctuaryService` business layer
 - **Workbook:** [`my_practice.py`](./day19/my_practice.py) — 6 Hands-on coding tasks with automated test suite for self-practice
 
+### 📍 [Day 20: Concurrency, Multithreading, Multiprocessing & AsyncIO Architecture](./day20)
+- **01:** Concurrency vs Parallelism & GIL Benchmarks: CPython GIL internals, reference counting mutex, CPU-bound vs I/O-bound speedups, and `ProcessPoolExecutor` vs `ThreadPoolExecutor`
+- **02:** Multithreading & Race Conditions: Bytecode race conditions, atomic critical sections with `threading.Lock` / `RLock`, `as_completed()` download workers, and Thread-Safe TTL Cache
+- **03:** AsyncIO & Structured Concurrency: Cooperative multitasking, single-threaded reactor Event Loop, `asyncio.gather()`, Python 3.11+ `asyncio.TaskGroup`, and resilient `asyncio.timeout()`
+- **04:** Advanced Async Patterns & AI Streaming: Asynchronous context managers (`__aenter__`/`__aexit__`), LLM token streaming (`async for`), `asyncio.Queue` workers, and `asyncio.Semaphore` rate limiter
+- **Workbook:** [`my_practice.py`](./day20/my_practice.py) — 6 Hands-on coding tasks with automated test suite for self-practice
+
 ---
 
 ## 🛠️ Tech Stack & Tools
