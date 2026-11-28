@@ -10,8 +10,8 @@ This repository documents my daily code, structured notes, logic exercises, and 
 
 | Phase | Focus Area | Status |
 | :--- | :--- | :---: |
-| **Phase 1** | Python Fundamentals, Logic Building & Data Structures | 🟡 In Progress |
-| **Phase 2** | Modern Full Stack Web (Frontend + FastAPI + Databases) | ⚪ Upcoming |
+| **Phase 1** | Python Fundamentals, Logic Building & Data Structures | 🟢 Completed |
+| **Phase 2** | Modern Full Stack Web (Frontend + FastAPI + Databases) | 🟡 In Progress |
 | **Phase 3** | AI Engineering (LLMs, LangChain, Vector DBs, Agents, RAG) | ⚪ Upcoming |
 | **Phase 4** | End-to-End Capstone AI Projects & Cloud Deployment | ⚪ Upcoming |
 
@@ -177,6 +177,13 @@ This repository documents my daily code, structured notes, logic exercises, and 
 - **03:** AsyncIO & Structured Concurrency: Cooperative multitasking, single-threaded reactor Event Loop, `asyncio.gather()`, Python 3.11+ `asyncio.TaskGroup`, and resilient `asyncio.timeout()`
 - **04:** Advanced Async Patterns & AI Streaming: Asynchronous context managers (`__aenter__`/`__aexit__`), LLM token streaming (`async for`), `asyncio.Queue` workers, and `asyncio.Semaphore` rate limiter
 - **Workbook:** [`my_practice.py`](./day20/my_practice.py) — 6 Hands-on coding tasks with automated test suite for self-practice
+
+### 📍 [Day 21: FastAPI Architecture, ASGI, Modern REST APIs & Dependency Injection](./day21)
+- **01:** ASGI vs WSGI & Lifespan Architecture: Non-blocking event loops, modern `@asynccontextmanager` startup/teardown, CORS handling, and request-timing latency middleware
+- **02:** Request-Response Lifecycle & Pydantic V2: Path/Query validation, custom `@field_validator` cleaning, strict `response_model` sensitive data filtering, and automatic 422 errors
+- **03:** Modular APIRouter Composition: Enterprise microservice structuring, `/api/v1` namespace grouping, OpenAPI tags, and Mindifestation Sanctuary router aggregation
+- **04:** Dependency Injection Engine (`Depends`): Inversion of Control, `yield` resource lifecycle management, multi-tier security auth chaining, and CI/CD `dependency_overrides`
+- **Workbook:** [`my_practice.py`](./day21/my_practice.py) — 6 Hands-on coding tasks with automated test suite for self-practice
 
 ---
 
